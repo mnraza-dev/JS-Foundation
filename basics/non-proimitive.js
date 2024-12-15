@@ -33,17 +33,18 @@ const user = {
 
 // How we're able to change object made with const?
 
-// => we're not changing the address of the user obj , 
+// => We're not changing the address of the user obj , 
 // address is same is same in memory and its properties are updating 
-
 // delete user's any property
 // console.log(user);
-
 // delete user.age
-
 // console.log(user);
 
-Object.seal(user)
+// Prevent Object's from adding the new properties or deleting the existing one.
+Object.seal(user);
 delete user.age
 console.log(user);
+
+// Prevent Object's from adding,modifying and deleting the properties.
+Object.freeze(user);
 
