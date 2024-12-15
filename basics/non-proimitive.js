@@ -48,3 +48,5 @@ console.log(user);
 // Prevent Object's from adding,modifying and deleting the properties.
 Object.freeze(user);
 
+console.log('isGraduate' in user);
+
