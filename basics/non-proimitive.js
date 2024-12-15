@@ -1,14 +1,49 @@
+// const user = {
+//     firstname: "MN",
+//     lastname: "Raza",
+//     email: 'mnraza94@gmail.com',
+//     address: {
+//         city: 'Bhopal',
+//         state: "MP",
+//         pin: 460021,
+//     },
+//     isGraduate: false,
+//     occupation: 'Softwrae Developer'
+// }
+// console.log(user.firstname);
+// console.log(user['address']);
+
+// user.age = 29
+
+// console.table(user.address);
+
 const user = {
     firstname: "MN",
     lastname: "Raza",
     email: 'mnraza94@gmail.com',
-    address: "Bhopal",
+    address: {
+        city: 'Bhopal',
+        state: "MP",
+        pin: 460021,
+    },
+    age: 29,
+    isGraduate: false,
     occupation: 'Softwrae Developer'
 }
-// console.log(user.firstname);
-// console.log(user['address']);
 
-user.age = 29
+// How we're able to change object made with const?
 
+// => we're not changing the address of the user obj , 
+// address is same is same in memory and its properties are updating 
+
+// delete user's any property
+// console.log(user);
+
+// delete user.age
+
+// console.log(user);
+
+Object.seal(user)
+delete user.age
 console.log(user);
 
