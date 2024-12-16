@@ -13,3 +13,4 @@ while (i < animals.length) {
 console.log(
     `I have ${animals.length} animals`
 );
+
