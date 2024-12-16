@@ -26,7 +26,13 @@ for (const key in user) {
 }
 
 const userKeys = Object.keys(user)
-console.log(userKeys);
+const userValues = Object.values(user)
+const userEntries = Object.entries(user)
+
+console.log("User Keys", userKeys);
+console.log("User Values", userValues);
+console.log("User Entries", userEntries);
+
 
 for (const key of userKeys) {
     console.log(user[key]);
