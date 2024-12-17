@@ -28,3 +28,9 @@ const filteredMonths = months.filter((month, index) => {
     return month.length > 7
 })
 console.log(filteredMonths);
+
+const filteredMonthByCharacter = months.filter((month, index) => {
+    return month.includes('m') 
+})
+
+console.log(filteredMonthByCharacter);
