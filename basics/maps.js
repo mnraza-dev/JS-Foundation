@@ -24,3 +24,7 @@ const months = [
 
 console.log(monthNames);
 
+const filteredMonths = months.filter((month, index) => {
+    return month.length > 7
+})
+console.log(filteredMonths);
