@@ -1,5 +1,3 @@
-// import { FontAwesomeIcon } from '@fontawesome/react-fontawesome'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 
 const Footer = () => {
@@ -9,7 +7,7 @@ const Footer = () => {
                 Footer Component
             </h2>
 
-            
+
         </div>
     )
 }
