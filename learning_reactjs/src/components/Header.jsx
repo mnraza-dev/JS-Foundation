@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = () => {
     return (
-        <div className=' shadow-md drop-shadow-xl  h-[90px]  flex items-center  justify-between px-20'>
+        <div className='sticky top-0 bg-white  z-50  shadow-md drop-shadow-xl  h-[90px]  flex items-center  justify-between px-20'>
             <h2 className='text-2xl '>
                 Where in the world ?
             </h2>
