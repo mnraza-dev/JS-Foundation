@@ -4,11 +4,13 @@ import App from "./src/App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Contact from "./src/components/Contact";
 import Home from "./src/pages/Home";
+import NotFound from "./src/pages/NotFound";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <App />,
+        errorElement: <NotFound />,
         children: [
             {
                 path: '/',
