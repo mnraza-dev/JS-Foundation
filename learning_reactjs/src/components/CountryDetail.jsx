@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
 
 const CountryDetail = () => {
-  const countryName = new URLSearchParams(location.search).get('name');
+  // const countryName = new URLSearchParams(location.search).get('name');
+  const params = useParams()
   const [countryData, setCountryData] = useState(null);
 
   useEffect(() => {
