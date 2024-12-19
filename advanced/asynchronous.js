@@ -1,11 +1,8 @@
-
-
 console.log("I am first");
 
 function greet() {
     console.log("Hello! from greet");
 }
-
 
 setTimeout(() => {
     console.log("Hello! from set timeout");
