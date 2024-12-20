@@ -1,4 +1,4 @@
-const calculateSum = require('./sum.js')
+const { calculateSum, name } = require('./sum.js')
 
 // console.log(global);
 // console.log(this); //empty object
@@ -7,8 +7,9 @@ const calculateSum = require('./sum.js')
 
 let a = 24;
 let b = 45;
+console.log("Name is: ", name);
 
-console.log("the value of calculateSum is: ",calculateSum(a, b));
+console.log("the value of calculateSum is: ", calculateSum(a, b));
 
 
 
