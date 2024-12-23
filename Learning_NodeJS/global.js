@@ -1,4 +1,5 @@
-const { calculateSum,name, multiply } = require('./calculate')
+const { calculateSum,name, multiply } = require('./calculate');
+const data = require('./data.json');
 // console.log(global);
 // console.log(this); //empty object
 // console.log(globalThis); //global object
@@ -10,6 +11,8 @@ console.log("Name is: ", name);
 
 console.log("the value of calculateSum is: ", calculateSum(a, b));
 console.log("the value of Multiply is: ", multiply(a, b));
+
+console.log(JSON.stringify(data));
 
 
 

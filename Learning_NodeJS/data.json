@@ -1,0 +1,31 @@
+{
+    "name": "MN Raza",
+    "age": 29,
+    "isMarried": false,
+    "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+    },
+    "hobbies": [
+        "Reading",
+        "Writing",
+        "Coding"
+    ],
+    "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+    ],
+    "interests": [
+        "Music",
+        "Sports",
+        "Travel"
+    ],
+    "languages": [
+        "English",
+        "Urdu",
+        "Hindi"
+    ]
+}
