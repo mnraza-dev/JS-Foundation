@@ -54,7 +54,6 @@ const myMoreThanTwo = mynums.myFilter((num, index) => num > 500);
 console.log("Polyfill for filter", myMoreThanTwo);
 
 
-
 // Polifill for reduce
 // Array.reduce((acc, current, index, arr) => {acc + current}, initialValue);
 
@@ -71,3 +70,33 @@ const mySum = mynums.myReduce((acc, current) => acc + current, 0);
 
 console.log("Polyfill for reduce", mySum);
 
+// Output based question for map, filter and reduce
+let students = [
+    { name: "John", age: 20, rollNo: 1, marks: 90 },
+    { name: "Jane", age: 21, rollNo: 2, marks: 80 },
+    { name: "Joe", age: 22, rollNo: 3, marks: 70 },
+    { name: "Jen", age: 23, rollNo: 4, marks: 60 },
+    { name: "Jill", age: 24, rollNo: 5, marks: 50 },
+    { name: "Jin", age: 25, rollNo: 6, marks: 40 },
+
+]
+//Q.1 - Return name only in capital letters
+// Using for loop
+const names = [];
+for (let i = 0; i < students.length; i++) {
+    names.push(students[i].name.toUpperCase())
+
+}
+console.log("Using for loop", names);
+
+// Using map function
+const namesInCapitalLetters = students.map((std) => {
+    return std.name.toUpperCase()
+})
+console.log(namesInCapitalLetters);
+
+//Q.2 - Return only  details of students who scored more than 60 marks 
+ const passingStudents = students.filter((std) => {
+     return std.marks > 60
+ })
+console.log("Passing Students", passingStudents);
