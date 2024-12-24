@@ -15,11 +15,35 @@ const multiply = (a, b) => {
 }
 
 // First class functions
-function square(x) {
-    return x * x
-}
-function displaySquare(fn) {
-    console.log("square is: ", fn(4));
+// function square(x) {
+//     return x * x
+// }
+// function displaySquare(fn) {
+//     console.log("square is: ", fn(4));
 
-}
-displaySquare(square)
+// }
+// displaySquare(square)
+
+// IIFE
+
+// (function square(x) {
+//     console.log("Square is: ", x * x);
+
+// })(2)
+
+// Output based questions
+    (function (x) {
+        return (
+            function (y) {
+                console.log(x);
+
+            }(2)
+        )
+    })(4)
+
+    // 4
+
+
+
+
+
