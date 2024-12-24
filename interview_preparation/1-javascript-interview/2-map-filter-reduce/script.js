@@ -77,7 +77,10 @@ let students = [
     { name: "Joe", age: 22, rollNo: 3, marks: 70 },
     { name: "Jen", age: 23, rollNo: 4, marks: 60 },
     { name: "Jill", age: 24, rollNo: 5, marks: 50 },
-    { name: "Jin", age: 25, rollNo: 6, marks: 40 },
+    { name: "Jin", age: 25, rollNo: 76, marks: 40 },
+    { name: "Dhruv", age: 21, rollNo: 6, marks: 33 },
+    { name: "Elvish", age: 19, rollNo: 16, marks: 33 },
+
 
 ]
 //Q.1 - Return name only in capital letters
@@ -96,7 +99,36 @@ const namesInCapitalLetters = students.map((std) => {
 console.log(namesInCapitalLetters);
 
 //Q.2 - Return only  details of students who scored more than 60 marks 
- const passingStudents = students.filter((std) => {
-     return std.marks > 60
- })
+const passingStudents = students.filter((std) => {
+    return std.marks > 60
+})
 console.log("Passing Students", passingStudents);
+
+//Q.3 - Return total marks of all students
+const totalMarks = students.reduce((acc, current) => {
+    return acc + current.marks
+}, 0)
+console.log("Total Marks", totalMarks);
+
+// Q.4 - Return average marks of all students
+const averageMarks = students.reduce((acc, current) => {
+    return acc + current.marks
+}, 0) / students.length
+console.log("Average Marks", averageMarks);
+
+// Q.5 - Return total marks of all students who scored less than 40 marks    
+
+const totalMarksOfFailingStudents = students.filter((std) => {
+    return std.marks < 40
+}).reduce((acc, current) => {
+    return acc + current.marks
+}, 0)
+console.log("Total Marks of Failing Students", totalMarksOfFailingStudents);
+
+
+// Q.6 - Return only the name and marks of all students who scored more than 60 marks 
+
+const namesOfAllStudentsMarks60 = students.filter((std) => {
+    return std.marks > 60
+}).map((std) => std.name )
+console.log("Name for all students who scored more than 60 marks",namesOfAllStudentsMarks60);
