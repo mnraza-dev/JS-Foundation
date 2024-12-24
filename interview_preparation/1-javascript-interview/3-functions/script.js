@@ -10,10 +10,39 @@ const sub = function (a, b) {
 }
 
 // Arrow functions
-
+// 1. Syntax
 const multiply = (a, b) => {
     return a * b
 }
+// 2. Implicit "return" keyword
+const division = (a, b) => a / b
+
+// 3. arguments
+function fnArgs() {
+    console.log(arguments);
+    
+}
+fnArgs(1,2,34,45);
+const fn =()=>{
+    console.log(arguments);
+    
+}
+// fn(1,2,34,45)
+// 4.  "this" keyword
+
+let user = {
+    username:'MN Raza',
+    age: 29,
+    display: function () {
+        console.log(this.username); //MN Raza
+    },
+    display2: () => {
+        console.log(this.username); //undefined
+    }
+}
+
+user.display()
+user.display2()
 
 // First class functions
 // function square(x) {
@@ -163,9 +192,9 @@ function sayHello(fn) {
 sayHello(greet)
 
 // Event Listeners
-document.addEventListener("click", () => {
-    console.log("Clicked");
-})
+// document.addEventListener("click", () => {
+//     console.log("Clicked");
+// })
 
 // setTimeout(() => {
 //     console.log("Clicked");
