@@ -36,5 +36,19 @@ const mynums = [123,124,245,567,367,873,783,567];
 
 const myNewNums = mynums.myMap((num, index) => num + index);
 
-console.log(myNewNums);
+console.log("Polyfill for map",myNewNums);
 
+// Polifill for filter
+// Array.filter((num, index, arr) => {num > 8});
+
+Array.prototype.myFilter = function (cb) {
+    let arr = [];
+    for (let i = 0; i < this.length; i++) {
+        if(cb(this[i], i, this)) arr.push(this[i]);
+    }
+    return arr;
+}
+
+const myMoreThanTwo = mynums.myFilter((num, index) => num > 500);
+
+console.log("Polyfill for filter",myMoreThanTwo);
