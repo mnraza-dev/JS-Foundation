@@ -32,11 +32,11 @@ Array.prototype.myMap = function (cb) {
 
 }
 
-const mynums = [123,124,245,567,367,873,783,567];
+const mynums = [123, 124, 245, 567, 367, 873, 783, 567];
 
 const myNewNums = mynums.myMap((num, index) => num + index);
 
-console.log("Polyfill for map",myNewNums);
+console.log("Polyfill for map", myNewNums);
 
 // Polifill for filter
 // Array.filter((num, index, arr) => {num > 8});
@@ -44,11 +44,30 @@ console.log("Polyfill for map",myNewNums);
 Array.prototype.myFilter = function (cb) {
     let arr = [];
     for (let i = 0; i < this.length; i++) {
-        if(cb(this[i], i, this)) arr.push(this[i]);
+        if (cb(this[i], i, this)) arr.push(this[i]);
     }
     return arr;
 }
 
 const myMoreThanTwo = mynums.myFilter((num, index) => num > 500);
 
-console.log("Polyfill for filter",myMoreThanTwo);
+console.log("Polyfill for filter", myMoreThanTwo);
+
+
+
+// Polifill for reduce
+// Array.reduce((acc, current, index, arr) => {acc + current}, initialValue);
+
+Array.prototype.myReduce = function (cb, initialValue) {
+    var acc = initialValue;
+    for (let i = 0; i < this.length; i++) {
+        acc = acc ? cb(acc, this[i], i, this) : this[i];
+
+    }
+    return acc;
+}
+
+const mySum = mynums.myReduce((acc, current) => acc + current, 0);
+
+console.log("Polyfill for reduce", mySum);
+
