@@ -150,6 +150,17 @@ add(...arr);
 // a and b are arguments
 
 
+// Callaback functions
+
+function greet(){
+    console.log("Hello! from greet");
+}
+function sayHello(fn) {
+    fn();
+
+}
+sayHello(greet)
+
 
 
 
