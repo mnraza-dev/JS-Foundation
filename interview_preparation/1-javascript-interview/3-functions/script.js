@@ -10,9 +10,10 @@ const sub = function (a, b) {
 }
 
 // Arrow functions
-// const multiply = (a, b) => {
-//     return a * b
-// }
+
+const multiply = (a, b) => {
+    return a * b
+}
 
 // First class functions
 // function square(x) {
@@ -160,6 +161,15 @@ function sayHello(fn) {
 
 }
 sayHello(greet)
+
+// Event Listeners
+document.addEventListener("click", () => {
+    console.log("Clicked");
+})
+
+// setTimeout(() => {
+//     console.log("Clicked");
+// }, 2000)
 
 
 
