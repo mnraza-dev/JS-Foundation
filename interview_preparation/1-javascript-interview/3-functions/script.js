@@ -55,6 +55,71 @@ function add() {
 }
 add();  // 30
 
+// A nested function example
+function getScore() {
+    var num1 = 2;
+    num2 = 3;
+
+    function add() {
+        return name + " scored " + (num1 + num2);
+    }
+
+    return add();
+}
+
+console.log(getScore()); //MN Raza scored 5
+
+// Function Scope - O/P Based Questions
+for (var i = 0; i < 5; i++) {
+    setTimeout(() => {
+        console.log(i);
+
+    }, i * 1000);
+} // it will print every time 5 
+
+//1.  The for loop runs from i = 0 to i < 5.
+//2.  Each iteration sets up a setTimeout that logs i after i * 1000 milliseconds.
+//3.  Because var declares i with function scope, there is only one shared i for all iterations.
+//4.  By the time the setTimeout callbacks execute, the loop has already completed, and i has the final value of 5.
+
+// Correcting the Code
+
+// To capture the correct value of i for each setTimeout, 
+// you can use either let or an IIFE (Immediately Invoked Function Expression).
+
+for (var i = 0; i < 5; i++) {
+    (function (i) {
+        setTimeout(() => {
+            console.log(i);
+        }, i * 1000);
+
+    })(i)
+
+}
+// using let instead of IIFE
+
+// for (let i = 0; i < 5; i++) {
+//     setTimeout(() => {
+//         console.log(i);
+
+//     }, i * 1000);
+// }
+
+// Output
+// 0
+// 1
+// 2    
+// 3
+// 4
+
+// Function Hoisting
+function fnName() {
+    console.log("Function is called");
+    
+}
+fnName();
+
+
 
 
 
