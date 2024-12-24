@@ -32,16 +32,30 @@ const multiply = (a, b) => {
 // })(2)
 
 // Output based questions
-    (function (x) {
-        return (
-            function (y) {
-                console.log(x);
+(function (x) {
+    return (
+        function (y) {
+            console.log(x);
 
-            }(2)
-        )
-    })(4)
+        }(2)
+    )
+})(4)
 
-    // 4
+// 4
+
+// Function scope 
+
+var num1 = 10;
+num2 = 30;
+name = "MN Raza";
+
+function add() {
+    var num2 = 20;
+    console.log(num1 + num2);
+}
+add();  // 30
+
+
 
 
 
