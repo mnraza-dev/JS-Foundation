@@ -10,9 +10,9 @@ const sub = function (a, b) {
 }
 
 // Arrow functions
-const multiply = (a, b) => {
-    return a * b
-}
+// const multiply = (a, b) => {
+//     return a * b
+// }
 
 // First class functions
 // function square(x) {
@@ -32,50 +32,51 @@ const multiply = (a, b) => {
 // })(2)
 
 // Output based questions
-(function (x) {
-    return (
-        function (y) {
-            console.log(x);
 
-        }(2)
-    )
-})(4)
+// (function (x) {
+//     return (
+//         function (y) {
+//             console.log(x);
+
+//         }(2)
+//     )
+// })(4)
 
 // 4
 
 // Function scope 
 
-var num1 = 10;
-num2 = 30;
-name = "MN Raza";
+// var num1 = 10;
+// num2 = 30;
+// name = "MN Raza";
 
-function add() {
-    var num2 = 20;
-    console.log(num1 + num2);
-}
-add();  // 30
+// function add() {
+//     var num2 = 20;
+//     console.log(num1 + num2);
+// }
+// add();  // 30
 
 // A nested function example
-function getScore() {
-    var num1 = 2;
-    num2 = 3;
+// function getScore() {
+//     var num1 = 2;
+//     num2 = 3;
 
-    function add() {
-        return name + " scored " + (num1 + num2);
-    }
+//     function add() {
+//         return name + " scored " + (num1 + num2);
+//     }
 
-    return add();
-}
+//     return add();
+// }
 
-console.log(getScore()); //MN Raza scored 5
+// console.log(getScore()); //MN Raza scored 5
 
 // Function Scope - O/P Based Questions
-for (var i = 0; i < 5; i++) {
-    setTimeout(() => {
-        console.log(i);
+// for (var i = 0; i < 5; i++) {
+//     setTimeout(() => {
+//         console.log(i);
 
-    }, i * 1000);
-} // it will print every time 5 
+//     }, i * 1000);
+// } // it will print every time 5 
 
 //1.  The for loop runs from i = 0 to i < 5.
 //2.  Each iteration sets up a setTimeout that logs i after i * 1000 milliseconds.
@@ -119,7 +120,7 @@ for (var i = 0; i < 5; i++) {
 
 // function fnName() {
 //     console.log("Function is called");
-    
+
 // }
 
 // console.log(x); //undefined because it is hoisted
@@ -127,16 +128,26 @@ for (var i = 0; i < 5; i++) {
 
 // Function Hoisting - O/P Based Questions
 
-var x = 5;
-function fnName() {
-    console.log(x);
-    var x = 10;
+// var x = 5;
+// function fnName() {
+//     console.log(x);
+//     var x = 10;
+// }
+// fnName();  //undefined
+
+
+// Params vs Arguments
+
+// a and b are parameters
+function add(...nums) { // ...nums is a rest parameter
+    console.log(nums[0] + nums[1]);
 }
-fnName();  //undefined
+var arr = [ 4, 5];
+add(...arr); 
+// ...arr is called spread operator
+//9  //arguments
 
-
-
-
+// a and b are arguments
 
 
 
