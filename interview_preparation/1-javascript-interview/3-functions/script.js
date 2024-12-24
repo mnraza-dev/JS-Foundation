@@ -87,15 +87,16 @@ for (var i = 0; i < 5; i++) {
 // To capture the correct value of i for each setTimeout, 
 // you can use either let or an IIFE (Immediately Invoked Function Expression).
 
-for (var i = 0; i < 5; i++) {
-    (function (i) {
-        setTimeout(() => {
-            console.log(i);
-        }, i * 1000);
+// for (var i = 0; i < 5; i++) {
+//     (function (i) {
+//         setTimeout(() => {
+//             console.log(i);
+//         }, i * 1000);
 
-    })(i)
+//     })(i)
 
-}
+// }
+
 // using let instead of IIFE
 
 // for (let i = 0; i < 5; i++) {
@@ -113,11 +114,18 @@ for (var i = 0; i < 5; i++) {
 // 4
 
 // Function Hoisting
+fnName();
+
 function fnName() {
     console.log("Function is called");
     
 }
-fnName();
+
+console.log(x); //undefined because it is hoisted
+var x = 5;
+
+
+
 
 
 
