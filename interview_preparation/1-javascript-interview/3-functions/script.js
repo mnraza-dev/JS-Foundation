@@ -114,17 +114,25 @@ for (var i = 0; i < 5; i++) {
 // 4
 
 // Function Hoisting
-fnName();
 
-function fnName() {
-    console.log("Function is called");
+// fnName();
+
+// function fnName() {
+//     console.log("Function is called");
     
-}
+// }
 
-console.log(x); //undefined because it is hoisted
+// console.log(x); //undefined because it is hoisted
+// var x = 5;
+
+// Function Hoisting - O/P Based Questions
+
 var x = 5;
-
-
+function fnName() {
+    console.log(x);
+    var x = 10;
+}
+fnName();  //undefined
 
 
 
