@@ -14,7 +14,6 @@ const App = () => {
     }
   };
 
-  // Event listener for spacebar press
   useEffect(() => {
     const handleSpacebarPress = (e) => {
       if (e.key === " ") {
