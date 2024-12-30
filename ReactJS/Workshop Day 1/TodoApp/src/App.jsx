@@ -1,4 +1,15 @@
+import { useState } from "react"
+
 export default function App() {
+  const [todo, setTodo] = useState([]);
+
+  const addTodo = (e) => {
+    e.preventDefault();
+    const value = e.target.todo.value;
+    setTodo([...todo, value]);
+    e.target.todo.value = "";
+  }
+
   return (
     <div className="h-screen flex justify-center items-center ">
       <div className="w-[600px] rounded-lg drop-shadow-md text-center shadow-sm bg-emerald-800 p-4">
@@ -8,7 +19,7 @@ export default function App() {
         <hr className="border-1 pb-6 border-white" />
         <div className="relative">
 
-          <form >
+          <form onSubmit={addTodo}>
             <input
               type="text"
               name="todo"
@@ -27,11 +38,14 @@ export default function App() {
             </button>
           </form>
           <ul>
-            <li className="list-none p-4 text-white font-semibold ">
-              Lorem dipisicing elit. Quos, quia
-              <button className="drop-shadow-md  box-shadow-md rounded-full  p-2 bg-slate-50 cursor-pointer ml-4 text-blue-400">Edit</button>
-              <button className="drop-shadow-md  box-shadow-md rounded-full  p-2 bg-slate-50 cursor-pointer ml-4 text-blue-400">Delete</button>
-            </li>
+            {
+              todo.map((item, index) => <li className="list-none p-4 text-white font-semibold ">
+                {item}
+                <button className="drop-shadow-md  box-shadow-md rounded-full  p-2 bg-slate-50 cursor-pointer ml-4 text-blue-400">Edit</button>
+                <button className="drop-shadow-md  box-shadow-md rounded-full  p-2 bg-slate-50 cursor-pointer ml-4 text-blue-400">Delete</button>
+              </li>)
+            }
+
           </ul>
 
         </div>
