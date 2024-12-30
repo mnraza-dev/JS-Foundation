@@ -5,14 +5,18 @@ export default function App() {
 
   const addTodo = (e) => {
     e.preventDefault();
-    setTodo([...todo, e.target.todo.value]);
-    e.target.value = "";
+    const newTodo = e.target.todo.value;
+    setTodo([...todo, newTodo]);
+    e.target.reset();
+  
   }
+  
   const deleteTodo = (index) => {
     const newTodo = [...todo];
     newTodo.splice(index, 1);
     setTodo(newTodo);
   }
+
   return (
     <div className="h-screen flex justify-center items-center ">
       <div className="w-[600px] rounded-lg drop-shadow-md text-center shadow-sm bg-emerald-800 p-4">
@@ -51,7 +55,7 @@ export default function App() {
                     <button className="drop-shadow-md  box-shadow-md font-bold rounded-full  p-2 bg-slate-50 cursor-pointer ml-4 text-blue-700">
                       Edit
                     </button>
-                    <button  className="drop-shadow-md  box-shadow-md font-bold rounded-full  p-2 bg-slate-50 cursor-pointer ml-4 text-blue-700">Delete</button></div>
+                    <button  className="drop-shadow-md  box-shadow-md font-bold rounded-full  p-2 bg-slate-50 cursor-pointer ml-4 text-blue-700" onClick={() => deleteTodo(index)}>Delete</button></div>
                 </div></li>)
             }
 
