@@ -1,25 +1,39 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function App() {
+
   const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [editIndex, setEditIndex] = useState(null);
+
+  useEffect(() => {
+    const savedTodos = JSON.parse(localStorage.getItem("todos"));
+    if (savedTodos) {
+      setTodos(savedTodos);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (todos.length > 0) {
+      localStorage.setItem("todos", JSON.stringify(todos));
+    }
+  }, [todos]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (editIndex !== null) {
-      // Edit existing todo
+      // Edit existing todo item
       const updatedTodos = [...todos];
       updatedTodos[editIndex] = inputValue;
       setTodos(updatedTodos);
       setEditIndex(null);
     } else {
-      // Add new todo
+      // Adding new todo item
       setTodos([...todos, inputValue]);
     }
 
-    setInputValue(""); // Reset input after submit
+    setInputValue(""); 
   };
 
   const handleEdit = (index) => {
