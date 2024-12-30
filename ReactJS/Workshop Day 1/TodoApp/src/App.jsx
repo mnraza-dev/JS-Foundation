@@ -3,7 +3,6 @@ import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 
 export default function App() {
-
   const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [editIndex, setEditIndex] = useState(null);
@@ -26,13 +25,12 @@ export default function App() {
   
     if (editIndex !== null) {
       const updatedTodos = [...todos];
-      updatedTodos[editIndex] = { text: inputValue, completed: false }; // Initialize as not completed
+      updatedTodos[editIndex] = { text: inputValue, completed: false }; 
       setTodos(updatedTodos);
-      setEditIndex(null); // Reset edit index
+      setEditIndex(null); 
     } else {
       setTodos([...todos, {id: Date.now(), text: inputValue, completed: false }]);
     }
-  
     setInputValue(""); 
   };
   
