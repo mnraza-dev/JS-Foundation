@@ -23,18 +23,24 @@ export default function App() {
     e.preventDefault();
 
     if (editIndex !== null) {
-      // Edit existing todo item
+      // Edit existing todo
       const updatedTodos = [...todos];
-      updatedTodos[editIndex] = inputValue;
+      updatedTodos[editIndex] = { text: inputValue, completed: false }; // Reset to incomplete
       setTodos(updatedTodos);
       setEditIndex(null);
     } else {
-      // Adding new todo item
-      setTodos([...todos, inputValue]);
+      // Add new todo
+      setTodos([...todos, { text: inputValue, completed: false }]); // New todo is incomplete
     }
 
-    setInputValue(""); 
+    setInputValue("");
   };
+  const toggleCompleted = (index) => {
+    const updatedTodos = [...todos];
+    updatedTodos[index].completed = !updatedTodos[index].completed;
+    setTodos(updatedTodos);
+  };
+
 
   const handleEdit = (index) => {
     setInputValue(todos[index]);
@@ -77,8 +83,16 @@ export default function App() {
             {todos.map((item, index) => (
               <li key={index} className="list-none font-semibold flex items-center p-4 text-white">
                 <div className="w-full flex justify-between">
-                  <div className="font-bold text-xl">{item}</div>
+                  <div className={`font-semibold text-xl ${item.completed ? 'line-through font-semibold text-red-400' : ''}`}>
+                    {item.text}
+                  </div>
                   <div>
+                    <button
+                      onClick={() => toggleCompleted(index)} // Toggle completion on button click
+                      className={`drop-shadow-md font-bold rounded-full p-2 ${item.completed ? 'bg-green-500' : 'bg-emerald-500'} cursor-pointer ml-4 text-white`}
+                    >
+                      {item.completed ? "Undo" : "Complete"}
+                    </button>
                     <button
                       onClick={() => handleEdit(index)}
                       className="drop-shadow-md box-shadow-md font-bold rounded-full p-2 bg-slate-50 cursor-pointer ml-4 text-blue-700"
@@ -87,7 +101,7 @@ export default function App() {
                     </button>
                     <button
                       onClick={() => handleDelete(index)}
-                      className="drop-shadow-md box-shadow-md font-bold rounded-full p-2 bg-slate-50 cursor-pointer ml-4 text-blue-700"
+                      className="drop-shadow-md box-shadow-md font-bold rounded-full p-2 bg-red-500 cursor-pointer ml-4 text-gray-200"
                     >
                       Delete
                     </button>
@@ -96,6 +110,7 @@ export default function App() {
               </li>
             ))}
           </ul>
+
         </div>
       </div>
     </div>
