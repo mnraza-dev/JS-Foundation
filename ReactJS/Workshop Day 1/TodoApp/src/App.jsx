@@ -21,31 +21,32 @@ export default function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+  
     if (editIndex !== null) {
-      // Edit existing todo
+      // Edit the existing todo
       const updatedTodos = [...todos];
-      updatedTodos[editIndex] = { text: inputValue, completed: false }; // Reset to incomplete
+      updatedTodos[editIndex] = { text: inputValue, completed: false }; // Initialize as not completed
       setTodos(updatedTodos);
-      setEditIndex(null);
+      setEditIndex(null); // Reset edit index
     } else {
-      // Add new todo
-      setTodos([...todos, { text: inputValue, completed: false }]); // New todo is incomplete
+      // Add new todo as an object with text and completed properties
+      setTodos([...todos, { text: inputValue, completed: false }]); // Add new todo
     }
-
-    setInputValue("");
+  
+    setInputValue(""); // Clear input field
   };
+  
   const toggleCompleted = (index) => {
     const updatedTodos = [...todos];
-    updatedTodos[index].completed = !updatedTodos[index].completed;
-    setTodos(updatedTodos);
+    updatedTodos[index].completed = !updatedTodos[index].completed; // Toggle the 'completed' property
+    setTodos(updatedTodos); // Update the todos state
   };
-
-
+  
   const handleEdit = (index) => {
-    setInputValue(todos[index]);
-    setEditIndex(index);
+    setInputValue(todos[index].text); 
+    setEditIndex(index); 
   };
+  
 
   const handleDelete = (index) => {
     const updatedTodos = todos.filter((_, i) => i !== index);
@@ -79,7 +80,7 @@ export default function App() {
               {editIndex !== null ? "Edit Todo" : "Add Todo"}
             </button>
           </form>
-          <ul>
+          <ul className="h-[500px] overflow-scroll ">
             {todos.map((item, index) => (
               <li key={index} className="list-none font-semibold flex items-center p-4 text-white">
                 <div className="w-full flex justify-between">
