@@ -6,6 +6,8 @@ const App = () => {
 
   const [city, setCity] = useState();
   const [country, setCountry] = useState();
+  const [singleCountry, setSingleCountry] = useState();
+
 
   const getCountries = async () => {
     try {
@@ -17,6 +19,15 @@ const App = () => {
       console.log(error);
       
     }
+  }
+  const fetchCities = async (scountry) => {
+   setSingleCountry(scountry);
+
+   const findCities = country.find((item) => item.country === scountry);
+
+   setCity(findCities.cities);
+   console.log(findCities.cities);
+
   }
   const getCities = async () => {
     try {
@@ -40,7 +51,8 @@ const App = () => {
         Select Your Hometown!
       </h1>
       <div className=' flex justify-center items-center gap-6'>
-        <select className='w-1/2 p-2 rounded-full' name="country"  id="">
+        {/* Country List */}
+        <select className='w-1/2 p-2 rounded-full' name="country" onChange={(e) => fetchCities(e.target.value)}  id="" value={singleCountry}>
           <option className='rounded-full' disabled selected hidden value="">Select Country</option>
           {
             country?.map((item, index) => {
@@ -52,7 +64,7 @@ const App = () => {
           <option className='rounded-full' disabled selected hidden value="">Select City</option>
           {
             city?.map((item, index) => {
-              return <option key={index} value={item.city}>{item.city}</option>
+              return <option key={index} value={item}>{item}</option>
             })
           }
         </select>
