@@ -1,3 +1,4 @@
+import { FilePenLine, FilePenLineIcon, Trash2 } from 'lucide-react';
 import { useEffect, useState } from "react";
 
 export default function App() {
@@ -90,21 +91,21 @@ export default function App() {
                   <div>
                     <button
                       onClick={() => toggleCompleted(index)} // Toggle completion on button click
-                      className={`drop-shadow-md font-bold rounded-full p-2 ${item.completed ? 'bg-green-500' : 'bg-emerald-500'} cursor-pointer ml-4 text-white`}
+                      className={`drop-shadow-md font-bold rounded-full py-2 px-4 ${item.completed ? 'bg-green-500' : 'bg-emerald-500'} cursor-pointer ml-4 text-white`}
                     >
-                      {item.completed ? "Undo" : "Complete"}
+                      {item.completed ? "Undo" : "Mark as Complete"}
                     </button>
                     <button
                       onClick={() => handleEdit(index)}
-                      className="drop-shadow-md box-shadow-md font-bold rounded-full p-2 bg-slate-50 cursor-pointer ml-4 text-blue-700"
+                      className="drop-shadow-md box-shadow-md font-bold rounded-full p-2 bg-blue-500 cursor-pointer ml-4 text-gary-200"
                     >
-                      Edit
+                      <FilePenLine />
                     </button>
                     <button
                       onClick={() => handleDelete(index)}
                       className="drop-shadow-md box-shadow-md font-bold rounded-full p-2 bg-red-500 cursor-pointer ml-4 text-gray-200"
                     >
-                      Delete
+                    <Trash2 />
                     </button>
                   </div>
                 </div>
