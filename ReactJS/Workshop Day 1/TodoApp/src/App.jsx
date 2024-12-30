@@ -7,21 +7,33 @@ export default function App() {
         </h1>
         <hr className="border-1 pb-6 border-white" />
         <div className="relative">
-          <input
-            type="text"
-            name="todo"
-            className="
+
+          <form >
+            <input
+              type="text"
+              name="todo"
+              className="
           p-4 
           w-[400px] 
           h-[60px] rounded-lg 
           outline-none border-2 
           border-emerald-500 
           placeholder:text-lg placeholder:font-semibold placeholder:text-gray-400" placeholder="Enter a Todo Item"
-          />
-          <button
-            className=" h-[60px] absolute right-0 transform -translate-x-1/2  p-4 bg-emerald-500 rounded-lg text-white font-bold">
-            Add Todo
-          </button>
+            />
+            <button
+              className="h-[60px] absolute right-0 transform -translate-x-1/2 p-4 bg-emerald-500 rounded-lg text-white font-bold rounded-l-none"
+            >
+              Add Todo
+            </button>
+          </form>
+          <ul>
+            <li className="list-none p-4 text-white font-semibold ">
+              Lorem dipisicing elit. Quos, quia
+              <button className="drop-shadow-md  box-shadow-md rounded-full  p-2 bg-slate-50 cursor-pointer ml-4 text-blue-400">Edit</button>
+              <button className="drop-shadow-md  box-shadow-md rounded-full  p-2 bg-slate-50 cursor-pointer ml-4 text-blue-400">Delete</button>
+            </li>
+          </ul>
+
         </div>
       </div>
 
