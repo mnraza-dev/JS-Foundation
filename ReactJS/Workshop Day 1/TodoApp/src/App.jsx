@@ -5,11 +5,14 @@ export default function App() {
 
   const addTodo = (e) => {
     e.preventDefault();
-    const value = e.target.todo.value;
-    setTodo([...todo, value]);
-    e.target.todo.value = "";
+    setTodo([...todo, e.target.todo.value]);
+    e.target.value = "";
   }
-
+  const deleteTodo = (index) => {
+    const newTodo = [...todo];
+    newTodo.splice(index, 1);
+    setTodo(newTodo);
+  }
   return (
     <div className="h-screen flex justify-center items-center ">
       <div className="w-[600px] rounded-lg drop-shadow-md text-center shadow-sm bg-emerald-800 p-4">
@@ -39,11 +42,17 @@ export default function App() {
           </form>
           <ul>
             {
-              todo.map((item, index) => <li className="list-none p-4 text-white font-semibold ">
-                {item}
-                <button className="drop-shadow-md  box-shadow-md rounded-full  p-2 bg-slate-50 cursor-pointer ml-4 text-blue-400">Edit</button>
-                <button className="drop-shadow-md  box-shadow-md rounded-full  p-2 bg-slate-50 cursor-pointer ml-4 text-blue-400">Delete</button>
-              </li>)
+              todo.map((item, index) => <li className="list-nonefont-semibold flex  items-center p-4 text-white  ">
+                <div className="w-full flex justify-between ">
+                  <div className="font-bold text-xl">
+                    {item}
+                  </div>
+                  <div>
+                    <button className="drop-shadow-md  box-shadow-md font-bold rounded-full  p-2 bg-slate-50 cursor-pointer ml-4 text-blue-700">
+                      Edit
+                    </button>
+                    <button  className="drop-shadow-md  box-shadow-md font-bold rounded-full  p-2 bg-slate-50 cursor-pointer ml-4 text-blue-700">Delete</button></div>
+                </div></li>)
             }
 
           </ul>
