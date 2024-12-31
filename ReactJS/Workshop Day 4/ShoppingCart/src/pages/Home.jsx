@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Footer from '../components/Footer';
 import { faker } from '@faker-js/faker';
+import SingleProduct from '../components/SingleProduct';
 
 const Home = () => {
   const productsArray = [...Array(20)].map(() => ({
@@ -23,23 +24,7 @@ const Home = () => {
       <main className="container mx-auto py-10 px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {products.map((product) => (
-            <div
-              key={product.id}
-              className="bg-gray-200 rounded-lg  p-4 flex flex-col items-center transform transition-transform hover:scale-105 drop-shadow-lg shadow-lg"
-            >
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-40 object-cover rounded-md mb-4"
-              />
-              <h2 className="text-lg font-semibold text-gray-800 text-center">
-                {product.name}
-              </h2>
-              <p className="text-gray-600 text-center mt-2">${product.price}</p>
-              <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
-                Add to Cart
-              </button>
-            </div>
+            <SingleProduct key={product.id} product={product} />  
           ))}
         </div>
       </main>
