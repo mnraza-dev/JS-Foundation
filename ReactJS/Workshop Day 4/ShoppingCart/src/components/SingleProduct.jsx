@@ -3,18 +3,18 @@ import { toast } from 'react-toastify';
 
 const SingleProduct = ({ product, cart, setCart }) => {
   const handleAddToCart = () => {
-    setCart([...cart, product]); // Add the product to the cart
+    setCart([...cart, product]); 
     toast.success(`${product.name} added to the cart!`, {
       position: "top-right",
-      autoClose: 2000, // Automatically close after 2 seconds
+      autoClose: 3000, 
     });
   };
 
   const handleRemoveFromCart = () => {
-    setCart(cart.filter((p) => p.id !== product.id)); // Remove the product from the cart
+    setCart(cart.filter((p) => p.id !== product.id)); 
     toast.error(`${product.name} removed from the cart!`, {
       position: "top-right",
-      autoClose: 2000,
+      autoClose: 4000,
     });
   };
 
