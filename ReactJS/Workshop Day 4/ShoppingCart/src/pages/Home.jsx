@@ -3,6 +3,7 @@ import Footer from '../components/Footer';
 import { faker } from '@faker-js/faker';
 import SingleProduct from '../components/SingleProduct';
 
+faker.seed(123);
 const Home = () => {
   const productsArray = [...Array(20)].map(() => ({
     id: faker.string.uuid(),
@@ -12,6 +13,7 @@ const Home = () => {
   }));
 
   const [products] = useState(productsArray);
+  const [cart, setCart] = useState([]);
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -24,11 +26,11 @@ const Home = () => {
       <main className="container mx-auto py-10 px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {products.map((product) => (
-            <SingleProduct key={product.id} product={product} />  
+            <SingleProduct cart={cart} setCart={setCart} key={product.id} product={product} />
           ))}
         </div>
       </main>
-      <Footer/>
+      <Footer />
     </div>
   );
 };
