@@ -12,6 +12,7 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import category from '../data/category.js';
 
 export default function HamburgerDrawer() {
   const [state, setState] = React.useState({
@@ -31,33 +32,29 @@ export default function HamburgerDrawer() {
 
   const list = (anchor) => (
     <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+      sx={{ padding: 2, width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 200 }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        <ListItem  sx={{
+          color: 'gray',
+          // backgroundColor: 'black'
+        }}>
+          Categories
+        </ListItem>
       </List>
       <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
+      <List >
+        {category.map((text, index) => (
+          <ListItem button key={text} disablePadding>
+            <ListItemText sx={{
+              paddingLeft: 2,
+              paddingRight: 2,
+              paddingBottom: 1,
+              paddingTop: 1
+            }} primary={text} />
           </ListItem>
         ))}
       </List>
@@ -67,12 +64,12 @@ export default function HamburgerDrawer() {
 
   const theme = createTheme({
     palette: {
-      mode: 'dark', 
+      mode: 'dark',
     },
   });
 
   return (
-    <ThemeProvider theme={theme}> {/* Wrap the component with ThemeProvider */}
+    <ThemeProvider theme={theme}>
       <div>
         <React.Fragment key={'left'}>
           <Button onClick={toggleDrawer('left', true)}>
