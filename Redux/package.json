@@ -1,0 +1,17 @@
+{
+  "name": "redux",
+  "version": "1.0.0",
+  "main": "script.js",
+  "type": "module",
+  "scripts": {
+    "start": "npx parcel index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "parcel": "^2.13.3",
+    "redux": "^5.0.1"
+  }
+}
