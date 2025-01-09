@@ -1,23 +1,21 @@
-import { createStore } from "redux";
-
-const initialState = {
-    count: 0
+let state = {
+  count: 0,
+};
+function increment() {
+  /**
+   * Mutating the state
+   * 
+   * state.count = state.count + 1;
+   * 
+   * Not Mutating way
+   * 
+   */
+  state = { ...state, count: (state.count += 1) };
 }
-const store = createStore({
-    initialState,
-    reducers: {
-        increment: (state) => {
-            state.count += 1;
-        },
-        decrement: (state) => {
-            state.count -= 1;
-        }
-    }
-});
-
-console.log(store.getState());
-
-store.dispatch({ type: "increment" });
-
-
-export default store;
+console.log("'count' before increment: ", state);
+increment();
+console.log(state);
+increment();
+console.log(state);
+increment();
+console.log(state);
