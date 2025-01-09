@@ -1,9 +1,10 @@
 import { createStore } from "redux";
 
+const initialState = {
+    count: 0
+}
 const store = createStore({
-    state: {
-        count: 0
-    },
+    initialState,
     reducers: {
         increment: (state) => {
             state.count += 1;
@@ -13,5 +14,10 @@ const store = createStore({
         }
     }
 });
+
+console.log(store.getState());
+
+store.dispatch({ type: "increment" });
+
 
 export default store;
