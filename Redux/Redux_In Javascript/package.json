@@ -1,13 +1,13 @@
 {
   "name": "redux",
   "version": "1.0.0",
-  "main":   "script.js",
+  "main": "script.js",
   "type": "module",
   "scripts": {
     "start": "npx parcel index.html"
   },
   "keywords": [],
-  "author": "",
+  "author": "MN Raza",
   "license": "ISC",
   "description": "",
   "dependencies": {
