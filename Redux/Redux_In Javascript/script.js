@@ -35,7 +35,6 @@ function reducer(state = initialState, action) {
 
 //   return state;
 
-
 const store = createStore(
   reducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
@@ -44,12 +43,20 @@ const store = createStore(
 const myStore = myCreateStore(reducer);
 console.log(myStore);
 
-
 // console.log(store);
 myStore.subscribe(() => {
   console.log(myStore.getState());
 });
 
+myStore.subscribe(() => {
+  console.log("Changed");
+});
+
+myStore.subscribe(() => {
+  console.log("Changed - 2 ");
+});
+myStore.dispatch({ type: "post/increment" });
+// console.log(myStore.getState());
 myStore.dispatch({ type: "post/decrement" });
 // console.log(myStore.getState());
 

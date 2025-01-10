@@ -1,7 +1,6 @@
 export function myCreateStore(reducer) {
   let state;
   let listeners = [];
-
   const store = {
     getState() {
       return state;
@@ -14,7 +13,6 @@ export function myCreateStore(reducer) {
       listeners.push(Listener);
     },
   };
-
   store.dispatch({ type: "@@INIT" });
   return store;
 }
