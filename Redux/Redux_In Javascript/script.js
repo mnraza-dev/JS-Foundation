@@ -34,16 +34,17 @@ function reducer(state = initialState, action) {
 
 //   return state;
 
-const store = createStore(reducer);
+
+const store = createStore(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 console.log(store);
 store.subscribe(() => {
   console.log(store.getState());
 });
 
-// store.dispatch({ type: "post/increment" });
 store.dispatch({ type: "post/decrement" });
-// store.dispatch({ type: "post/increment" });
 store.dispatch({ type: "post/incrementByAmount", payload: 25 });
-store.dispatch({ type: "post/deceremntByAmount", payload: 5 });
-store.dispatch({ type: "post/deceremntByAmount", payload: 5 });
+store.dispatch({ type: "post/deceremntByAmount", payload: 15 });
