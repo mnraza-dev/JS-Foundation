@@ -1,17 +1,12 @@
-import {createStore} from "redux";
+import { createStore } from "redux";
 
-console.log(createStore);
-
-
-
-
-let state = {
+let reduxState = {
   name: "John",
   age: 30,
   count: 0,
 };
 
-function reducer(state, action) {
+function reducer(state = reduxState, action) {
   if (action.type === "post/increment") {
     return { ...state, count: (state.count += 1) };
   } else if (action.type === "post/decrement") {
@@ -21,23 +16,6 @@ function reducer(state, action) {
   return state;
 }
 
-// state = reducer(state);
-console.log(
-  reducer(state, {
-    type: "post/increment",
-  })
-);
+const store = createStore(reducer);
 
-console.log(
-  reducer(state, {
-    type: "post/increment",
-  })
-);
-
-console.log(
-  reducer(state, {
-    type: "post/increment",
-  })
-);
-
-// console.log(state);
+console.log(store.getState());
