@@ -1,5 +1,6 @@
 export function myCreateStore(reducer) {
   let state;
+  let listeners = [];
 
   const store = {
     getState() {
@@ -7,8 +8,11 @@ export function myCreateStore(reducer) {
     },
     dispatch(action) {
       state = reducer(state, action);
+      listeners.forEach((listener) => listener());
     },
-    subscribe() {},
+    subscribe(Listener) {
+      listeners.push(Listener);
+    },
   };
 
   store.dispatch({ type: "@@INIT" });

@@ -47,14 +47,14 @@ console.log(myStore);
 
 // console.log(store);
 myStore.subscribe(() => {
-  // console.log(store.getState());
+  console.log(myStore.getState());
 });
 
 myStore.dispatch({ type: "post/decrement" });
-console.log(myStore.getState());
+// console.log(myStore.getState());
 
 myStore.dispatch({ type: "post/incrementByAmount", payload: 5 });
-console.log(myStore.getState());
+// console.log(myStore.getState());
 
 myStore.dispatch({ type: "post/deceremntByAmount", payload: 1 });
-console.log(myStore.getState());
+// console.log(myStore.getState());
