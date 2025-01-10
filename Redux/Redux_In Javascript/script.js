@@ -1,4 +1,5 @@
 import { createStore } from "redux";
+import { myCreateStore } from "./my-redux";
 
 const initialState = {
   name: "John",
@@ -40,11 +41,20 @@ const store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-console.log(store);
-store.subscribe(() => {
-  console.log(store.getState());
+const myStore = myCreateStore(reducer);
+console.log(myStore);
+
+
+// console.log(store);
+myStore.subscribe(() => {
+  // console.log(store.getState());
 });
 
-store.dispatch({ type: "post/decrement" });
-store.dispatch({ type: "post/incrementByAmount", payload: 95 });
-store.dispatch({ type: "post/deceremntByAmount", payload: 15 });
+myStore.dispatch({ type: "post/decrement" });
+console.log(myStore.getState());
+
+myStore.dispatch({ type: "post/incrementByAmount", payload: 5 });
+console.log(myStore.getState());
+
+myStore.dispatch({ type: "post/deceremntByAmount", payload: 1 });
+console.log(myStore.getState());
