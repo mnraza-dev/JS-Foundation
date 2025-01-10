@@ -1,12 +1,12 @@
 import { createStore } from "redux";
 
-let reduxState = {
+const initialState = {
   name: "John",
   age: 30,
   count: 0,
 };
 
-function reducer(state = reduxState, action) {
+function reducer(state = initialState, action) {
   if (action.type === "post/increment") {
     return { ...state, count: (state.count += 1) };
   } else if (action.type === "post/decrement") {
@@ -17,5 +17,10 @@ function reducer(state = reduxState, action) {
 }
 
 const store = createStore(reducer);
+
+console.log(store);
+console.log(store.getState());
+
+store.dispatch({ type: "post/increment" });
 
 console.log(store.getState());
