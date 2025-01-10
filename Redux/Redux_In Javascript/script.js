@@ -11,6 +11,10 @@ function reducer(state = initialState, action) {
     return { ...state, count: (state.count += 1) };
   } else if (action.type === "post/decrement") {
     return { ...state, count: (state.count -= 1) };
+  } else if (action.type === "post/incrementByAmount") {
+    return { ...state, count: (state.count += action.payload) };
+  } else if (action.type === "post/reset") {
+    return { ...state, count: 0 };
   }
 
   return state;
@@ -24,5 +28,6 @@ store.subscribe(() => {
 });
 
 store.dispatch({ type: "post/increment" });
-store.dispatch({ type: "post/decrement" });
+// store.dispatch({ type: "post/decrement" });
 store.dispatch({ type: "post/increment" });
+store.dispatch({ type: "post/incrementByAmount", payload: 5 });
