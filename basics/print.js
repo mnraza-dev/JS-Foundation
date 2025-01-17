@@ -8,3 +8,18 @@ console.table({
     profession: 'Software Developer',
     city: "Bhopal"
 })
+
+console.error("It is error msg");
+
+console.log("It is info msg");
+
+console.debug("It is debug msg");
+
+console.log("It is log msg");
+
+console.info("It is info msg");
+
+console.error("It is error msg");
+
+console.warn("It is warn msg");
+
