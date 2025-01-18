@@ -12,7 +12,7 @@ class Parent extends Component {
   render() {
     return <div>
       <h1>Parent Component</h1>
-      <Child name={this.state.name} />
+      <Child name={this.state.name} count={this.state.count} />
     </div>;
   }
 }
