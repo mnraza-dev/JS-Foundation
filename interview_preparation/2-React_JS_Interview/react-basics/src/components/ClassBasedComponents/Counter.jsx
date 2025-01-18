@@ -23,6 +23,12 @@ class Counter extends React.Component {
     console.log("Component updated");
   }
 
+  componentWillUnmount() {
+    console.log("Component unmounted");
+  }
+
+  
+
   render() {
     return (
       <div
