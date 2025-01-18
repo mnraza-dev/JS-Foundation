@@ -12,6 +12,8 @@ const add =(...args)=> {
     for (let i = 0; i < args.length; i++) {
         sum += args[i];
     } return sum
+
 }
 
-console.log(add(1, 2,100,200));
+
+console.log(add(5, 10, 15, 20));
