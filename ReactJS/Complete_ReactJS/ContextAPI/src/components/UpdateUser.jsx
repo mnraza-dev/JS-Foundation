@@ -4,8 +4,24 @@ import { UserContext } from "./UserContext";
 const UpdateUser = () => {
   const { updateUser } = useContext(UserContext);
   const [newName, setNewName] = useState("");
+  const handleSubmit = () => {
+    updateUser(newName);
+  };
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="name"
+          placeholder="Enter Name"
+          value={newName}
+          onChange={(e) => setNewName(e.target.value)}
+        />
 
-  return <div>UpdateUser</div>;
+        <button type="submit">Update User</button>
+      </form>
+    </div>
+  );
 };
 
 export default UpdateUser;
