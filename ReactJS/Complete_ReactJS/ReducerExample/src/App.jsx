@@ -1,38 +1,40 @@
 import React, { useReducer, useState } from "react";
-const initialState = {
-  count: 0,
-};
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "increment":
-      return {
-        ...state,
-        count: state.count + 1,
-      };
-    case "decrement":
-      return {
-        ...state,
-        count: state.count - 1,
-      };
 
-    case "reset":
-      return {
-        ...state,
-        count: 0,
-      };
-    case "ïncrementBy":
-      return {
-        ...state,
-        count: state.count + incrementBy,
-      };
-
-    default:
-      return state;
-  }
-};
 const App = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const initialState = {
+    count: 0,
+  };
   const [incrementBy, setIncrementBy] = useState(0);
+
+  const reducer = (state, action) => {
+    switch (action.type) {
+      case "increment":
+        return {
+          ...state,
+          count: state.count + 1,
+        };
+      case "decrement":
+        return {
+          ...state,
+          count: state.count - 1,
+        };
+
+      case "reset":
+        return {
+          ...state,
+          count: 0,
+        };
+      case "incrementBy":
+        return {
+          ...state,
+          count: state.count + incrementBy,
+        };
+
+      default:
+        return state;
+    }
+  };
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <div>
@@ -40,6 +42,7 @@ const App = () => {
         <span
           style={{
             color: "green",
+            marginRight: "15px",
           }}
         >
           useReducer
@@ -63,12 +66,12 @@ const App = () => {
         onChange={(e) => setIncrementBy(e.target.value)}
       />
       <button
-        onClick={() => dispatch({ type: "incrementBy", payload: incrementBy })}
+        onClick={() =>
+          dispatch({ type: "incrementBy", payload: Number(incrementBy) })
+        }
       >
-        Increment By {incrementBy}
+        Increment By {incrementBy > 0 ? incrementBy : 0}
       </button>
-
-      
     </div>
   );
 };
