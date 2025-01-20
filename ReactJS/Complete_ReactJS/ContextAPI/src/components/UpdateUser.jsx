@@ -4,8 +4,12 @@ import { UserContext } from "./UserContext";
 const UpdateUser = () => {
   const { updateUser } = useContext(UserContext);
   const [newName, setNewName] = useState("");
-  const handleSubmit = () => {
-    updateUser(newName);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (newName.trim()) {
+      updateUser(newName);
+      setNewName("");
+    }
   };
   return (
     <div>
@@ -13,7 +17,7 @@ const UpdateUser = () => {
         <input
           type="text"
           name="name"
-          placeholder="Enter Name"
+          placeholder="Enter new Name"
           value={newName}
           onChange={(e) => setNewName(e.target.value)}
         />

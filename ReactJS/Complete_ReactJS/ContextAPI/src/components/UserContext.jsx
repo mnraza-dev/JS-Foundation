@@ -9,7 +9,7 @@ const UserProvider = ({ children }) => {
 
   const updateUser = (newName) => {
     setUser({
-      name: newUpdatedName,
+      name: newName,
       age: user.age,
     });
   };
