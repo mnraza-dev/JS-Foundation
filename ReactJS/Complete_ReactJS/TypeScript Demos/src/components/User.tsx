@@ -1,8 +1,17 @@
 import React from 'react'
 
-const User: React.FC = () => {
+type UserProps = {
+    name: string
+    age: number
+    isStudent: boolean
+}
+const User: React.FC<UserProps> = ({name, age, isStudent}) => {
     return (
-        <div>User</div>
+        <div>
+            <h2>{name}</h2>
+            <p>Age: {age}</p>   
+            <p>Is student: {isStudent ? 'Yes' : 'No'}</p>
+        </div>
     )
 }
 

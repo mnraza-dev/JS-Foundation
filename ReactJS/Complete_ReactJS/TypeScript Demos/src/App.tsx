@@ -3,7 +3,7 @@ import User from "./components/User"
 const App: React.FC = () => {
   return (
     <div>
-      <User />
+      <User name="John Doe" age={30} isStudent={true} />
     </div>
   )
 }
