@@ -1,7 +1,10 @@
-
-const App = () => {
+import React from "react"
+import User from "./components/User"
+const App: React.FC = () => {
   return (
-    <div>App</div>
+    <div>
+      <User />
+    </div>
   )
 }
 
