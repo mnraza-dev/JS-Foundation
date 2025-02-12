@@ -11,7 +11,9 @@ console.log(newNums);
 const myName = "MNRaza"
 const nameArr = [...myName]
 console.log(nameArr);
+
 // with Objects
+
 const person = {
     name: "MN Raza",
     age: 29
@@ -19,7 +21,6 @@ const person = {
 
 const personArr = {...person, city: "Bhopal"}
 console.log(personArr);
-
 
 // more examples from prepCoding
 
@@ -31,5 +32,5 @@ console.log(myArr);
 
 const obj1 = {name: "John", age: 25};
 const obj2 = {...obj1, city: "Bhopal", age:30};
-console.log(obj2);
 
+console.log(obj2);
