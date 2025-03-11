@@ -8,6 +8,10 @@ if (true) {
 
 }
 console.log(name);
+
+var name = "Dhruv"
+console.log(name);
+
 // scope
 
 // var
