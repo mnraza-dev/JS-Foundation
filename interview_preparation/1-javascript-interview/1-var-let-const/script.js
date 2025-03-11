@@ -1,4 +1,13 @@
 // var vs let vs const
+
+var name = "MN Raza"
+
+if (true) {
+    var name = "Dhruv"
+    console.log(name);
+
+}
+console.log(name);
 // scope
 
 // var
