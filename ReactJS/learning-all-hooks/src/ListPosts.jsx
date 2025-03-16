@@ -7,7 +7,7 @@ const ListPosts = ({ data }) => {
 
       <ul>
         {data.map((item, i) => (
-          <li>
+          <li key={item.id}>
             <a href="#">{item.title}</a>
             <p>{item.body}</p>
           </li>

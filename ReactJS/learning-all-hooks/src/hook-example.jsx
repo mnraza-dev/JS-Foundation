@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ListPosts from "./ListPosts";
+import { useLayoutEffect } from "react";
 
 const HookExample = () => {
   const [counter, setCounter] = useState(0);
@@ -11,9 +12,13 @@ const HookExample = () => {
     setDataOfPosts(data);
     console.log("MY DATA 🚀", data);
   };
-
+  useLayoutEffect(() => {
+    console.log(
+      "useLayoutEffect() hook 🚀 Runs after first render before browser paints"
+    );
+  }, []);
   useEffect(() => {
-    console.log("re render");
+    console.log("useEffect() hook 🚀 Runs after the first render ");
     getPostsData();
 
     return () => {
