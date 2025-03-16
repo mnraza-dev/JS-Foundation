@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import HookExample from "./hook-example";
 import { useRef } from "react";
+import ThemeSwitcher from "./components/ThemeSwitcher";
 
 const App = () => {
   const [inputValue, setInputValue] = useState("");
@@ -14,6 +15,7 @@ const App = () => {
 
   return (
     <div className="App">
+      <ThemeSwitcher />
       <h1>Learning all hooks</h1>
       <input
         ref={inputRef}
