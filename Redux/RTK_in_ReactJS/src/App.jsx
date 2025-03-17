@@ -22,9 +22,10 @@ const App = () => {
 
       <input type="text" ref={inputRef} placeholder="ADD VALUES" />
       <button
-        onClick={() =>
-          dispatch(incrementByValue(parseInt(inputRef.current.value)))
-        }
+        onClick={() => {
+          dispatch(incrementByValue(parseInt(inputRef.current.value)));
+          inputRef.current.value = "";
+        }}
       >
         INCR BY Value
       </button>
