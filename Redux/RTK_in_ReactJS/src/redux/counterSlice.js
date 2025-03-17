@@ -19,7 +19,12 @@ const counterSlice = createSlice({
       console.log("RESET");
       state.value = 0;
     },
+    incrementByValue: (state, action) => {
+      console.log("INCREMENT BY VALUE");
+      state.value += action.payload;
+    },
   },
 });
-export const { increment, decrement, reset } = counterSlice.actions;
+export const { increment, decrement, reset, incrementByValue } =
+  counterSlice.actions;
 export default counterSlice.reducer;
