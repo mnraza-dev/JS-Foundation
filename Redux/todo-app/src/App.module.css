@@ -92,13 +92,13 @@
   }
   
   .todoText.completed {
-    color: #888;
+    color: #c9a8a8;
     text-decoration: line-through;
   }
   
   .deleteButton {
     padding: 8px 12px;
-    background-color: #ff4d4f;
+    background-color: #e34648;
     color: #fff;
     border: none;
     border-radius: 5px;
