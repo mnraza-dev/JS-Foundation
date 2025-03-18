@@ -1,12 +1,13 @@
+
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addTodo, toggleTodo, deleteTodo } from './redux/todoSlice';
 import { RootState, AppDispatch } from './redux/store';
 
 const App: React.FC = () => {
-  const [input, setInput] = useState<string>(''); 
-  const todos = useSelector((state: RootState) => state.todos.items); 
-  const dispatch = useDispatch<AppDispatch>(); 
+  const [input, setInput] = useState<string>('');
+  const todos = useSelector((state: RootState) => state.todos.items);
+  const dispatch = useDispatch<AppDispatch>();
 
   const handleAddTodo = () => {
     if (input.trim()) {
