@@ -6,6 +6,7 @@ const App = () => {
       <h1>Hello World</h1>
 
       <img
+      title="Google Logo"
         src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_120x44dp.png"
         alt="Logo"
         width={200}
