@@ -1,8 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import '@testing-library/jest-dom';
-
 import App from "./App";
-
 test("test for first react app", () => {
   render(<App />);
   const text = screen.getByText(/Hello World/i);
@@ -24,3 +22,4 @@ test("Testing Input Box", () => {
   expect(placeHolderText).toBeInTheDocument();
   expect(btnText).toBeInTheDocument();
 })
+
