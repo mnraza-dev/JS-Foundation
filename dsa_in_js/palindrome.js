@@ -1,5 +1,4 @@
 // WAP to check if a numeric value is palindrome or not
-
 /**
  * 121 => true
  * 123 => false
