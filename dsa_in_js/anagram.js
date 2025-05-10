@@ -4,15 +4,9 @@
 
 // isAnagram("anagram", "nagaram") => true
 // isAnagram("rat", "car") => false
-// isAnagram("a", "ab") => false
-
-
-var isAnagram = function(s, t) {
-    s = s.split("").sort().join("");
-    t = t.split("").sort().join("");
-    return s === t;
+var isAnagram = function (s, t) {
+  return s.split("").sort().join("") === t.split("").sort().join("");
 };
- 
 
 console.log(isAnagram("anagram", "nagaram")); // true
 console.log(isAnagram("rat", "car")); // false
