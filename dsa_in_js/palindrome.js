@@ -5,16 +5,24 @@
  * -121 => false
  * 10 => false 
  */
+
+
 function palindrome(num) {
   return num < 0 ? false : num === +num.toString().split("").reverse().join("");
 }
 
 const res = palindrome(121);
 console.log(res);
+
 /**
- * @param {number} x
- * @return {boolean}
+ * WAP to check if a string is palindrome or not
+ * racecar => true
  */
+function palindrome(str) {
+  return str < 1 ? false : str === str.split("").reverse().join("")
+}
+console.log(palindrome("racecar"))
+
 
 // More optimized code to check if a number is palindrome or not
 // 121 => true
