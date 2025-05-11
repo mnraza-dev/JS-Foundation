@@ -122,6 +122,10 @@ console.log(joined);
 let arr2 = arr.concat(arr1); // Concatenates two arrays
 console.log(arr2);
 
+// Array- Slicing
+let sliced = arr.slice(1, 3); // Slices the array
+console.log(sliced);
+
 // Array- Searching
 
 // Array- Slicing & Splicing
