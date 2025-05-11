@@ -146,7 +146,8 @@ console.log(foundIndex);
 let foundLastIndex = arr.lastIndexOf(3); // Finds the last index of the element
 console.log(foundLastIndex);
 
-
+// Array- Finding Includes
+let includes = arr.includes(3); // Checks if the array includes the element
 
 // Array- Searching
 
