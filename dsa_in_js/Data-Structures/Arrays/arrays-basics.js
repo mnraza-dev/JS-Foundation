@@ -58,6 +58,7 @@ const filteredArr = arr.filter((item, index) => {
 });
 // Using reduce
 // reduce executes a reducer function (that you provide) on each element of the array, resulting in a single output value
+// Reduce takes an array and reduces it to a single value
 const sum = arr.reduce((accumulator, currentValue) => {
   return accumulator + currentValue;
 }, 0);
