@@ -18,9 +18,9 @@ console.log(arr.length);
 
 // Array- Adding & Removing Elements
 
-arr.push("orange"); // Adds to the end
-arr.unshift("kiwi"); // Adds to the beginning
-arr.pop(); // Removes from the end
-arr.shift(); // Removes from the beginning
-arr.splice(1, 1); // Removes from the middle
-arr.splice(1, 0, "grape"); // Adds to the middle
+arr.push("orange");           // Adds to the end
+arr.pop();                    // Removes from the end
+arr.unshift("kiwi");          // Adds to the beginning
+arr.shift();                  // Removes from the beginning
+arr.splice(1, 1);             // Removes from the middle
+arr.splice(1, 0, "grape");    // Adds to the middle
