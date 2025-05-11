@@ -134,6 +134,11 @@ console.log(arr);
 let copied = arr.copyWithin(0, 1, 3); // Copies the array
 console.log(copied);
 
+// Array- Finding
+let found = arr.find((item) => item > 5); // Finds the first element that satisfies the condition
+console.log(found);
+
+
 
 // Array- Searching
 
