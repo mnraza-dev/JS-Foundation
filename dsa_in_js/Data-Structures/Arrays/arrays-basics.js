@@ -190,6 +190,10 @@ console.log(filled);
 let copiedWithin = arr.copyWithin(0, 1, 3); // Copies the array from index 1 to index 3
 console.log(copiedWithin);
 
+// Array- Finding FindLast
+let findLast = arr.findLast((item) => item > 5); // Finds the last element that satisfies the condition
+console.log(findLast);
+
 // Array- Searching
 
 // Array- Slicing & Splicing
