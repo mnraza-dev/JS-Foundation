@@ -106,7 +106,11 @@ console.log(arrayBuffer);
 let dataView = new DataView(arrayBuffer); // Converts to data view
 console.log(dataView);
 
+
 // Array- Sorting
+arr.sort(); // Sorts the array
+arr.sort((a, b) => a - b); // Sorts the array in ascending order
+arr.sort((a, b) => b - a); // Sorts the array in descending order
 
 // Array- Searching
 
