@@ -161,6 +161,10 @@ console.log(keys);
 // Array- Finding Values
 let values = arr.values(); // Returns an iterator over the values in the array
 console.log(values);
+
+// Array- Finding Entries
+let entries = arr.entries(); // Returns an iterator over the entries in the array
+console.log(entries);
 // Array- Searching
 
 // Array- Slicing & Splicing
