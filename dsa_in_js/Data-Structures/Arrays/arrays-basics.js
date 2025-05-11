@@ -1,6 +1,5 @@
 // Arrays- Declaration
-
-let arr = ["apple", "banana", "cherry"];
+let arr = [2,4,2,1,2,3,,4,5,,6,7,8,9,10];
 let arr1 = new Array("apple", "banana", "cherry");
 let arr3 = new Array(5);
 let arr4 = new Array();
@@ -47,8 +46,15 @@ arr.forEach((item, index) => {
 for (let item of arr) {
   console.log(item);
 }
+// Using map
+// map creates a new array with the results of calling a provided function on every element in the calling array
 const newArr = arr.map((item, index) => {
-  console.log(index, item);
+  console.log(index, item+2);
+});
+// Using filter
+// filter creates a new array with all elements that pass the test implemented by the provided function
+const filteredArr = arr.filter((item, index) => {
+  return item > 2;
 });
 
 // Array- Sorting
