@@ -129,6 +129,12 @@ console.log(sliced);
 // Array- Filling
 arr.fill(0); // Fills the array with 0  
 console.log(arr);
+
+// Array- Copying
+let copied = arr.copyWithin(0, 1, 3); // Copies the array
+console.log(copied);
+
+
 // Array- Searching
 
 // Array- Slicing & Splicing
