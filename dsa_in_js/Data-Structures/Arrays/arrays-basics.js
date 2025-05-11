@@ -63,6 +63,11 @@ const sum = arr.reduce((accumulator, currentValue) => {
   return accumulator + currentValue;
 }, 0);
 
+
+
+// Array- Converting to String
+let str = arr.toString(); // Converts to string
+console.log(str);
 // Array- Sorting
 
 // Array- Searching
