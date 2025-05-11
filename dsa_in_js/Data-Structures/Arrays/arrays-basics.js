@@ -4,6 +4,15 @@ let arr1 = new Array("apple", "banana", "cherry");
 let arr3 = new Array(5);
 let arr4 = new Array();
 
+// ✅ Arrays Are Objects!
+typeof []; // "object"
+Array.isArray([]); // true
+Array.isArray({}); // false
+Array.isArray({ length: 0 }); // false
+Array.isArray(new Array()); // true
+Array.isArray(new Array(5)); // true
+Array.isArray(new Array("apple", "banana", "cherry")); // true
+
 // Array- Accessing Elements
 
 console.log(arr[0]);
