@@ -173,6 +173,9 @@ console.log(every);
 // Array- Finding Some
 let some = arr.some((item) => item > 5); // Checks if some elements satisfy the condition
 console.log(some);
+// Array- Finding Flat
+let flat = arr.flat(); // Flattens the array
+console.log(flat);
 // Array- Searching
 
 // Array- Slicing & Splicing
