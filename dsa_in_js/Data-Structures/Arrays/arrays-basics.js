@@ -102,6 +102,10 @@ console.log(typedArray);
 let arrayBuffer = new ArrayBuffer(arr.length); // Converts to array buffer
 console.log(arrayBuffer);
 
+// Array- Converting to DataView
+let dataView = new DataView(arrayBuffer); // Converts to data view
+console.log(dataView);
+
 // Array- Sorting
 
 // Array- Searching
