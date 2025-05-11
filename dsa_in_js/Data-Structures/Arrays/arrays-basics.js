@@ -147,7 +147,12 @@ let foundLastIndex = arr.lastIndexOf(3); // Finds the last index of the element
 console.log(foundLastIndex);
 
 // Array- Finding Includes
-let includes = arr.includes(3); // Checks if the array includes the element
+let includes = arr.includes(3); // Checks if the array includes the element 
+console.log(includes);
+
+// Array- Finding Index of
+let indexOf = arr.indexOf(3); // Finds the index of the element
+console.log(indexOf);
 
 // Array- Searching
 
