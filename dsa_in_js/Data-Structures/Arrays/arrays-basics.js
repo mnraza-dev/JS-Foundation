@@ -47,6 +47,9 @@ arr.forEach((item, index) => {
 for (let item of arr) {
   console.log(item);
 }
+const newArr = arr.map((item, index) => {
+  console.log(index, item);
+});
 
 // Array- Sorting
 
