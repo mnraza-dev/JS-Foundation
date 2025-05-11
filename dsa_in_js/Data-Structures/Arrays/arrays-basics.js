@@ -63,7 +63,9 @@ const sum = arr.reduce((accumulator, currentValue) => {
   return accumulator + currentValue;
 }, 0);
 
-
+// Array- Converting to JSON
+let json = JSON.stringify(arr); // Converts to JSON
+console.log(json);
 
 // Array- Converting to String
 let str = arr.toString(); // Converts to string
