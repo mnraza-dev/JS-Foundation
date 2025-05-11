@@ -182,6 +182,10 @@ console.log(flat);
 let flatMap = arr.flatMap((item) => [item, item]); // Flattens the array and maps it
 console.log(flatMap);
 
+// Array- Finding Fill
+let filled = arr.fill(0, 1, 3); // Fills the array with 0 from index 1 to index 3
+console.log(filled);
+
 // Array- Searching
 
 // Array- Slicing & Splicing
