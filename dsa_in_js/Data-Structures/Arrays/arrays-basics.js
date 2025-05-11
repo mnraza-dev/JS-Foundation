@@ -186,6 +186,10 @@ console.log(flatMap);
 let filled = arr.fill(0, 1, 3); // Fills the array with 0 from index 1 to index 3
 console.log(filled);
 
+// Array- Finding CopyWithin
+let copiedWithin = arr.copyWithin(0, 1, 3); // Copies the array from index 1 to index 3
+console.log(copiedWithin);
+
 // Array- Searching
 
 // Array- Slicing & Splicing
