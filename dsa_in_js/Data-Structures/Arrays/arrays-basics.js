@@ -35,8 +35,12 @@ let arr6 = [...arr.slice(0, 1), "kiwi", ...arr.slice(1)]; // Adds to the beginni
 let arr7 = [...arr.slice(0, 1), ...arr.slice(2)]; // Removes from the beginning
 let arr8 = [...arr.slice(0, 1), "grape", ...arr.slice(1)]; // Adds to the middle
 
-// Array- Iterating
+// Array- Adding & Removing Elements (Using Destructuring)
+let [first, ...rest] = arr; // Destructuring    
+console.log(first); // 2
+console.log(rest); // [4, 2, 1, 2, 3, , 4, 5, , 6, 7, 8, 9, 10]
 
+// Array- Iterating
 // Using for loop
 for (let i = 0; i < arr.length; i++) {
   console.log(arr[i]);
