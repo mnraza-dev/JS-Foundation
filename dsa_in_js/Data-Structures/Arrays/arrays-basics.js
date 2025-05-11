@@ -112,6 +112,12 @@ arr.sort(); // Sorts the array
 arr.sort((a, b) => a - b); // Sorts the array in ascending order
 arr.sort((a, b) => b - a); // Sorts the array in descending order
 
+// Array- Reversing
+arr.reverse(); // Reverses the array
+
+// Array- Joining
+let joined = arr.join(", "); // Joins the array into a string
+console.log(joined);
 // Array- Searching
 
 // Array- Slicing & Splicing
