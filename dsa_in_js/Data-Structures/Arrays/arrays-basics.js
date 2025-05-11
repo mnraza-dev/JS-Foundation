@@ -203,5 +203,7 @@ let at = arr.at(2); // Returns the element at the specified index
 console.log(at);
 
 // Array- Searching
+let search = arr.indexOf(3); // Searches for the element in the array
+console.log(search);
 
 // Array- Slicing & Splicing
