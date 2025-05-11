@@ -178,6 +178,10 @@ console.log(some);
 let flat = arr.flat(); // Flattens the array
 console.log(flat);
 
+// Array- Finding FlatMap
+let flatMap = arr.flatMap((item) => [item, item]); // Flattens the array and maps it
+console.log(flatMap);
+
 // Array- Searching
 
 // Array- Slicing & Splicing
