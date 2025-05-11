@@ -138,7 +138,9 @@ console.log(copied);
 let found = arr.find((item) => item > 5); // Finds the first element that satisfies the condition
 console.log(found);
 
-
+// Array- Finding Index
+let foundIndex = arr.findIndex((item) => item > 5); // Finds the index of the first element that satisfies the condition    
+console.log(foundIndex);
 
 // Array- Searching
 
