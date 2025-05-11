@@ -118,6 +118,10 @@ arr.reverse(); // Reverses the array
 // Array- Joining
 let joined = arr.join(", "); // Joins the array into a string
 console.log(joined);
+// Array- Concatenating
+let arr2 = arr.concat(arr1); // Concatenates two arrays
+console.log(arr2);
+
 // Array- Searching
 
 // Array- Slicing & Splicing
