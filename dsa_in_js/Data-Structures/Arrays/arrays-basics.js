@@ -70,9 +70,14 @@ console.log(str);
 // Array- Converting to JSON
 let json = JSON.stringify(arr); // Converts to JSON
 console.log(json);
+
 // Array- Converting to Object
 let obj = Object.assign({}, arr); // Converts to object
 console.log(obj);
+// Array- Converting to Set
+let set = new Set(arr); // Converts to set
+console.log(set);
+
 // Array- Sorting
 
 // Array- Searching
