@@ -169,6 +169,10 @@ console.log(entries);
 // Array- Finding Every
 let every = arr.every((item) => item > 0); // Checks if all elements satisfy the condition
 console.log(every);
+
+// Array- Finding Some
+let some = arr.some((item) => item > 5); // Checks if some elements satisfy the condition
+console.log(some);
 // Array- Searching
 
 // Array- Slicing & Splicing
