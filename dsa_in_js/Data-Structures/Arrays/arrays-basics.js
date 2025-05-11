@@ -56,6 +56,11 @@ const newArr = arr.map((item, index) => {
 const filteredArr = arr.filter((item, index) => {
   return item > 2;
 });
+// Using reduce
+// reduce executes a reducer function (that you provide) on each element of the array, resulting in a single output value
+const sum = arr.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+}, 0);
 
 // Array- Sorting
 
