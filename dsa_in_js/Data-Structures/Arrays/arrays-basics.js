@@ -94,6 +94,11 @@ console.log(weakSet);
 let buffer = Buffer.from(arr); // Converts to buffer
 console.log(buffer);
 
+// Array- Converting to TypedArray
+let typedArray = new Uint8Array(arr); // Converts to typed array
+console.log(typedArray);
+
+
 // Array- Sorting
 
 // Array- Searching
