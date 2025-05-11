@@ -154,6 +154,12 @@ console.log(includes);
 let indexOf = arr.indexOf(3); // Finds the index of the element
 console.log(indexOf);
 
+// Array- Finding Keys 
+let keys = arr.keys(); // Returns an iterator over the keys in the array
+console.log(keys);
+
+// Array- Finding Values
+
 // Array- Searching
 
 // Array- Slicing & Splicing
