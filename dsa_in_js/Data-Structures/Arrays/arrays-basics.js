@@ -198,6 +198,10 @@ console.log(findLast);
 let findLastIndex = arr.findLastIndex((item) => item > 5); // Finds the last index of the element that satisfies the condition
 console.log(findLastIndex);
 
+// Array- Finding At
+let at = arr.at(2); // Returns the element at the specified index
+console.log(at);
+
 // Array- Searching
 
 // Array- Slicing & Splicing
