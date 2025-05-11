@@ -126,6 +126,9 @@ console.log(arr2);
 let sliced = arr.slice(1, 3); // Slices the array
 console.log(sliced);
 
+// Array- Filling
+arr.fill(0); // Fills the array with 0  
+console.log(arr);
 // Array- Searching
 
 // Array- Slicing & Splicing
