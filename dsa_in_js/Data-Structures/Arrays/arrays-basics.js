@@ -209,6 +209,6 @@ console.log(search);
 // Array- Slicing & Splicing
 let slicedSpliced = arr.slice(1, 3); // Slices the array
 console.log(slicedSpliced);
+
 let spliced = arr.splice(1, 3); // Splices the array
 console.log(spliced);
-
