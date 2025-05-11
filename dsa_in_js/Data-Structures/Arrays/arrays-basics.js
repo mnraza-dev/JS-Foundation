@@ -90,6 +90,10 @@ console.log(weakMap);
 let weakSet = new WeakSet(arr.map((item, index) => [index, item])); // Converts to weakset  
 console.log(weakSet);
 
+// Array- Converting to Buffer
+let buffer = Buffer.from(arr); // Converts to buffer
+console.log(buffer);
+
 // Array- Sorting
 
 // Array- Searching
