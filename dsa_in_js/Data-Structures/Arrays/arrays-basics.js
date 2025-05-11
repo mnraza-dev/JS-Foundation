@@ -81,6 +81,12 @@ console.log(set);
 // Array- Converting to Map
 let map = new Map(arr.map((item, index) => [index, item])); // Converts to map
 console.log(map);
+
+// Array- Converting to WeakMap
+let weakMap = new WeakMap(arr.map((item, index) => [index, item])); // Converts to weakmap
+console.log(weakMap);
+
+
 // Array- Sorting
 
 // Array- Searching
