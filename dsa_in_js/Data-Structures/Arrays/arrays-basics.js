@@ -194,6 +194,10 @@ console.log(copiedWithin);
 let findLast = arr.findLast((item) => item > 5); // Finds the last element that satisfies the condition
 console.log(findLast);
 
+// Array- Finding FindLastIndex
+let findLastIndex = arr.findLastIndex((item) => item > 5); // Finds the last index of the element that satisfies the condition
+console.log(findLastIndex);
+
 // Array- Searching
 
 // Array- Slicing & Splicing
