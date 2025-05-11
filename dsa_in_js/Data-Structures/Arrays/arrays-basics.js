@@ -159,7 +159,8 @@ let keys = arr.keys(); // Returns an iterator over the keys in the array
 console.log(keys);
 
 // Array- Finding Values
-
+let values = arr.values(); // Returns an iterator over the values in the array
+console.log(values);
 // Array- Searching
 
 // Array- Slicing & Splicing
