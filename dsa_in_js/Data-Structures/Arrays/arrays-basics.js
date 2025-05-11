@@ -86,6 +86,9 @@ console.log(map);
 let weakMap = new WeakMap(arr.map((item, index) => [index, item])); // Converts to weakmap
 console.log(weakMap);
 
+// Array- Converting to WeakSet
+let weakSet = new WeakSet(arr.map((item, index) => [index, item])); // Converts to weakset  
+console.log(weakSet);
 
 // Array- Sorting
 
