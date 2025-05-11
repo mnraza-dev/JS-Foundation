@@ -165,6 +165,10 @@ console.log(values);
 // Array- Finding Entries
 let entries = arr.entries(); // Returns an iterator over the entries in the array
 console.log(entries);
+
+// Array- Finding Every
+let every = arr.every((item) => item > 0); // Checks if all elements satisfy the condition
+console.log(every);
 // Array- Searching
 
 // Array- Slicing & Splicing
