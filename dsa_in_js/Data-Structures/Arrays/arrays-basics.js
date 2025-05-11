@@ -142,6 +142,12 @@ console.log(found);
 let foundIndex = arr.findIndex((item) => item > 5); // Finds the index of the first element that satisfies the condition    
 console.log(foundIndex);
 
+// Array- Finding Last Index
+let foundLastIndex = arr.lastIndexOf(3); // Finds the last index of the element
+console.log(foundLastIndex);
+
+
+
 // Array- Searching
 
 // Array- Slicing & Splicing
