@@ -98,6 +98,9 @@ console.log(buffer);
 let typedArray = new Uint8Array(arr); // Converts to typed array
 console.log(typedArray);
 
+// Array- Converting to ArrayBuffer
+let arrayBuffer = new ArrayBuffer(arr.length); // Converts to array buffer
+console.log(arrayBuffer);
 
 // Array- Sorting
 
