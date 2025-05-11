@@ -78,6 +78,9 @@ console.log(obj);
 let set = new Set(arr); // Converts to set
 console.log(set);
 
+// Array- Converting to Map
+let map = new Map(arr.map((item, index) => [index, item])); // Converts to map
+console.log(map);
 // Array- Sorting
 
 // Array- Searching
