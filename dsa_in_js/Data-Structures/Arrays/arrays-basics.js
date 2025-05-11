@@ -29,6 +29,12 @@ arr.shift();         // Removes from the beginning
 arr.splice(1, 1);    // Removes from the middle
 arr.splice(1, 0, "grape");  // Adds to the middle
 
+// Array- Adding & Removing Elements (Using Spread Operator)
+let arr5 = [...arr, "orange"]; // Adds to the end
+let arr6 = [...arr.slice(0, 1), "kiwi", ...arr.slice(1)]; // Adds to the beginning
+let arr7 = [...arr.slice(0, 1), ...arr.slice(2)]; // Removes from the beginning
+let arr8 = [...arr.slice(0, 1), "grape", ...arr.slice(1)]; // Adds to the middle
+
 // Array- Iterating
 
 // Using for loop
