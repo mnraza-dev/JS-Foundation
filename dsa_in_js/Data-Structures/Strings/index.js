@@ -79,3 +79,22 @@ function isAnagram(s, t) {
 console.log(isAnagram("anagram", "nagaram")); // true
 console.log(isAnagram("rat", "car"));         // false
 
+// 💡 Problem 5: First Unique Character in a String
+// 📘 Description:
+// Given a string, find the first non-repeating character in it and return its index. If it doesn't exist, return -1.
+
+function firstUniqChar(s) {
+  const map = new Map();
+  
+  for (let i = 0; i < s.length; i++) {
+    map.set(s[i], (map.get(s[i]) || 0) + 1);
+  }
+
+  for (let i = 0; i < s.length; i++) {
+    if (map.get(s[i]) === 1) return i;
+  }
+
+  return -1;
+}
+console.log(firstUniqChar("leetcode")); // 0
+console.log(firstUniqChar("loveleetcode")); // 2
