@@ -212,3 +212,7 @@ function validPalindrome(s) {
 
   return true;
 }
+
+console.log(validPalindrome("abca"));  // true
+console.log(validPalindrome("racecar"));  // true
+console.log(validPalindrome("abc"));  // false
