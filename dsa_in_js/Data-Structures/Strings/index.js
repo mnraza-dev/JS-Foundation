@@ -49,3 +49,7 @@ console.log(isPalindrome("hello"));   // false
 // 💡 Problem 3: Reverse Words in a String
 // 📘 Description:
 // Given a string, reverse the order of the words in it. Words are separated by spaces.
+function reverseWords(s) {
+  return s.split(' ').reverse().join(' ');
+}
+
