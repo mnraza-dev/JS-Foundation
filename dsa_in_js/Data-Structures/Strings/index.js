@@ -136,3 +136,6 @@ console.log(compress(chars));  // ["a", "2", "b", "2", "c", "3"]
 chars = ["a", "b", "c"];
 console.log(compress(chars));  // ["a", "b", "c"]
 
+// 💡 Problem 7: Longest Palindromic Substring
+
+// Given a string, return the longest palindromic substring. You need to find the largest contiguous substring that reads the same forward and backward.
