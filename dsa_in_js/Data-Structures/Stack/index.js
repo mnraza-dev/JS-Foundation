@@ -13,3 +13,25 @@ Push to add, pop to remove from the top.
 
 // Brackets close in the correct order.
 
+function isValidParenthesis(s) {
+  const stack = [];
+  const map = {
+    ')': '(',
+    '}': '{',
+    ']': '['
+  };
+
+  for (let char of s) {
+    if (char === '(' || char === '{' || char === '[') {
+      stack.push(char);
+    } else {
+      if (stack.pop() !== map[char]) {
+        return false;
+      }
+    }
+  }
+
+  return stack.length === 0;
+}
+isValidParenthesis('()[]{}'); // true
+isValidParenthesis('([)]'); // false
