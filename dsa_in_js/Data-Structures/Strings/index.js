@@ -169,3 +169,6 @@ function longestPalindrome(s) {
 
 console.log(longestPalindrome("babad"));  // "bab" or "aba"
 console.log(longestPalindrome("cbbd"));   // "bb"
+
+// 💡 Problem 8: Group Anagrams
+// Given an array of strings, group the anagrams together.
