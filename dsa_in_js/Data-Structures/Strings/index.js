@@ -60,3 +60,19 @@ console.log(reverseWords("  hello world  ")); // "world hello"
 
 // 💡 Problem 4: Anagram Check
 // Given two strings, write a function to determine if they are anagrams of each other (i.e., they contain the same characters in any order).
+
+function isAnagram(s, t) {
+  if (s.length !== t.length) return false;
+
+  const map = new Map();
+  for (let char of s) {
+    map.set(char, (map.get(char) || 0) + 1);
+  }
+
+  for (let char of t) {
+    if (!map.has(char) || map.get(char) === 0) return false;
+    map.set(char, map.get(char) - 1);
+  }
+
+  return true;
+}
