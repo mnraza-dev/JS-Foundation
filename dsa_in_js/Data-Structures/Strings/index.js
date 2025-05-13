@@ -166,3 +166,6 @@ function longestPalindrome(s) {
 
   return s.slice(start, end + 1);
 }
+
+console.log(longestPalindrome("babad"));  // "bab" or "aba"
+console.log(longestPalindrome("cbbd"));   // "bb"
