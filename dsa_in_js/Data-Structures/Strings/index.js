@@ -96,5 +96,6 @@ function firstUniqChar(s) {
 
   return -1;
 }
-console.log(firstUniqChar("leetcode")); // 0
-console.log(firstUniqChar("loveleetcode")); // 2
+console.log(firstUniqChar("leetcode"));       // 0
+console.log(firstUniqChar("loveleetcode"));   // 2
+console.log(firstUniqChar("aabbcc"));         // -1
