@@ -42,6 +42,6 @@ function isPalindrome(str) {
 
   return true;
 }
+
 console.log(isPalindrome("racecar")); // true
 console.log(isPalindrome("hello"));   // false
-
