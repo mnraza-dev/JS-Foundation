@@ -130,4 +130,9 @@ function compress(chars) {
 
   return write;
 }
+let chars = ["a", "a", "b", "b", "c", "c", "c"];
+console.log(compress(chars));  // ["a", "2", "b", "2", "c", "3"]
+
+chars = ["a", "b", "c"];
+console.log(compress(chars));  // ["a", "b", "c"]
 
