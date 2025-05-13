@@ -76,3 +76,6 @@ function isAnagram(s, t) {
 
   return true;
 }
+console.log(isAnagram("anagram", "nagaram")); // true
+console.log(isAnagram("rat", "car"));         // false
+
