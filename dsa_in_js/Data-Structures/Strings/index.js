@@ -220,3 +220,8 @@ console.log(validPalindrome("abc"));  // false
 
 // 💡 Problem 10: Rotate String
 // Given two strings, s and goal, return true if s can become goal after some number of rotations.
+
+function rotateString(s, goal) {
+  return s.length === goal.length && (s + s).includes(goal);
+}
+
