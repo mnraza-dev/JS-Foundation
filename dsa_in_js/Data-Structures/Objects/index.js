@@ -12,3 +12,4 @@ const book = {};
 book.title = "1984";
 delete book.title;
 console.log(book.title); // undefined
+
