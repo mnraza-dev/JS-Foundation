@@ -107,4 +107,27 @@ console.log(firstUniqChar("aabbcc"));         // -1
 // Begin with an empty string. For each character, count how many times it appears consecutively in the array.
 
 // If the count is greater than 1, add the count next to the character.
+function compress(chars) {
+  let write = 0;
+  let read = 0;
+
+  while (read < chars.length) {
+    let char = chars[read];
+    let count = 0;
+    
+    while (read < chars.length && chars[read] === char) {
+      read++;
+      count++;
+    }
+    
+    chars[write++] = char;
+    if (count > 1) {
+      for (let c of count.toString()) {
+        chars[write++] = c;
+      }
+    }
+  }
+
+  return write;
+}
 
