@@ -99,3 +99,12 @@ function firstUniqChar(s) {
 console.log(firstUniqChar("leetcode"));       // 0
 console.log(firstUniqChar("loveleetcode"));   // 2
 console.log(firstUniqChar("aabbcc"));         // -1
+
+
+// 💡 Problem 6: String Compression
+// Given an array of characters, compress it using the following algorithm:
+
+// Begin with an empty string. For each character, count how many times it appears consecutively in the array.
+
+// If the count is greater than 1, add the count next to the character.
+
