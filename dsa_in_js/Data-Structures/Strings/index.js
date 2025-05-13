@@ -186,3 +186,7 @@ function groupAnagrams(strs) {
   return Array.from(map.values());
 }
 console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
+
+// 💡 Problem 9: Valid Palindrome II
+// Given a string, return true if the string can be a palindrome after deleting at most one character. Otherwise, return false.
+
