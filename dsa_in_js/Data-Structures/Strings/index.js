@@ -47,7 +47,6 @@ console.log(isPalindrome("racecar")); // true
 console.log(isPalindrome("hello"));   // false
 
 // 💡 Problem 3: Reverse Words in a String
-// 📘 Description:
 // Given a string, reverse the order of the words in it. Words are separated by spaces.
 
 function reverseWords(s) {
@@ -57,3 +56,7 @@ function reverseWords(s) {
 console.log(reverseWords("the sky is blue"));  // "blue is sky the"
 console.log(reverseWords("  hello world  ")); // "world hello"
 
+
+
+// 💡 Problem 4: Anagram Check
+// Given two strings, write a function to determine if they are anagrams of each other (i.e., they contain the same characters in any order).
