@@ -42,6 +42,15 @@ export default function App() {
     }
   };
 
+  const handleCompleteTodo = (todo) => {
+    dispatch(
+      updateTodo({
+        ...todo,
+        completed: !todo.completed,
+      })
+    );
+  };
+
   const filteredTodos = todos.filter((todo) => todo.title);
 
   return (
@@ -60,7 +69,9 @@ export default function App() {
         <button
           type="submit"
           className={`${
-            editId ? "bg-blue-500 hover:bg-blue-600" : "bg-green-500 hover:bg-green-600"
+            editId
+              ? "bg-blue-500 hover:bg-blue-600"
+              : "bg-green-500 hover:bg-green-600"
           } text-white p-2 rounded-md`}
         >
           {editId ? "Update" : "Add"}
@@ -78,6 +89,12 @@ export default function App() {
             >
               <span>{todo.title}</span>
               <div className="flex gap-2">
+                <button
+                  className="bg-green-500 hover:bg-green-600 text-white p-1 px-2 rounded-md text-sm"
+                  onClick={() => handleCompleteTodo(todo)}
+                >
+                  {todo.completed ? "Undo" : "Complete"}
+                </button>
                 <button
                   className="bg-blue-500 hover:bg-blue-600 text-white p-1 px-2 rounded-md text-sm"
                   onClick={() => handleEditTodo(todo)}

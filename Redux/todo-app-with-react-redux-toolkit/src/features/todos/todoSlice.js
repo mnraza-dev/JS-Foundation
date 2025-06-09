@@ -17,10 +17,11 @@ const todoSlice = createSlice({
       state.todos.push(action.payload);
     },
     updateTodo: (state, action) => {
-      const { id, title } = action.payload;
+      const { id, title, completed } = action.payload;
       const existingTodo = state.todos.find((todo) => todo.id === id);
       if (existingTodo) {
-        existingTodo.title = title;
+        if (title !== undefined) existingTodo.title = title;
+        if (completed !== undefined) existingTodo.completed = completed;
       }
     },
     deleteTodo: (state, action) => {
