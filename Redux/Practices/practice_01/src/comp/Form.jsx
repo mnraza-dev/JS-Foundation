@@ -1,7 +1,10 @@
 import React from "react";
 import { useState } from "react";
-
+import { useDispatch, useSelector } from "react-redux";
+import { formData } from "../features/user/userSlice.js";
 export default function Form() {
+  const userData = useSelector((state) => state.user.value);
+  const dispatch = useDispatch();
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -9,7 +12,12 @@ export default function Form() {
   });
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+    dispatch(formData(user));
+    setUser({
+      name: "",
+      email: "",
+      password: "",
+    });
   };
   return (
     <form onSubmit={handleSubmit}>
@@ -39,6 +47,7 @@ export default function Form() {
         id="password"
       />
       <button type="submit">Submit</button>
+      <pre>{JSON.stringify(userData, null, 2)}</pre>
     </form>
   );
 }
