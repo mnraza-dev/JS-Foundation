@@ -5,7 +5,6 @@ import { addTodo, deleteTodo, updateTodo } from "./redux/action";
 export default function App() {
   const [input, setInput] = useState("");
   const [editId, setEditId] = useState(null);
-
   const todos = useSelector((state) => state.todos || []);
   const dispatch = useDispatch();
 
