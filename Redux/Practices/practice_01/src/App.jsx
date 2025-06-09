@@ -7,7 +7,7 @@ import {
   incrementByAmount,
 } from "./features/counter/counterSlice.js";
 import { useState } from "react";
-
+import Form from "./comp/Form.jsx";
 export default function App() {
   const [input, setinput] = useState(0);
   const dispatch = useDispatch();
@@ -30,6 +30,7 @@ export default function App() {
       <button onClick={() => dispatch(incrementByAmount(Number(input)))}>
         Increment by Amount
       </button>
+      <Form />
     </div>
   );
 }
