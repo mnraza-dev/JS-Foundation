@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addTodo } from "./redux/action";
+import { addTodo, deleteTodo, updateTodo } from "./redux/action";
 import { useState } from "react";
 
 export default function App() {
@@ -15,6 +15,19 @@ export default function App() {
     setInput("");
   };
 
+  const handleDeleteTodo = (id) => {
+    dispatch(deleteTodo(id));
+  };
+
+  const handleEditTodo = (id) => {
+    dispatch(updateTodo({ id, title: input }));
+  };
+  const handleCompleteTodo = (id) => {
+    const updatedTodos = todos.map((todo) =>
+      todo.id === id ? { ...todo, completed: !todo.completed } : todo
+    );
+    dispatch(updateTodo(updatedTodos));
+  };
   return (
     <>
       <div className="container mx-auto p-4 flex flex-col items-center justify-center">
@@ -42,12 +55,27 @@ export default function App() {
               className="flex justify-between items-center gap-1"
               key={todo.id}
             >
-              <span className="text-lg font-bold">{todo.title}</span>
+              <span>
+                {todo.completed ? <strike>{todo.title}</strike> : todo.title}
+              </span>
+              <button
+                onClick={() => handleCompleteTodo(todo.id)}
+                className="bg-green-500 text-white px-4 py-1 rounded-md"
+              >
+                {todo.completed ? "Undo" : "Complete"}
+              </button>
+
               <div className="flex py-2 gap-2">
-                <button className="bg-blue-500 text-white px-4 py-1 rounded-md">
+                <button
+                  onClick={handleEditTodo}
+                  className="bg-blue-500 text-white px-4 py-1 rounded-md"
+                >
                   Edit
                 </button>
-                <button className="bg-red-500 text-white px-4 py-1 rounded-md">
+                <button
+                  onClick={handleDeleteTodo}
+                  className="bg-red-500 text-white px-4 py-1 rounded-md"
+                >
                   Delete
                 </button>
               </div>
