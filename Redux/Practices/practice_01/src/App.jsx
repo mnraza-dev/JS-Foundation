@@ -13,9 +13,9 @@ export default function App() {
   const dispatch = useDispatch();
   const count = useSelector((state) => state.counter.value);
   return (
-    <div>
+    <div style={{ textAlign: "center" }}>
       <h1>Counter</h1>
-      <h2>{count}</h2>
+      <h2 style={{ color: "red", fontSize: "40px" }}>{count}</h2>
       <button onClick={() => dispatch(increment())}>Increment</button>
       <button onClick={() => dispatch(decrement())}>Decrement</button>
       <button onClick={() => dispatch(reset())}>Reset</button>
