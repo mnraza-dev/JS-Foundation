@@ -20,21 +20,28 @@ const App = () => {
       >
         +
       </button>
+      <br />
+      <br />
+
       <button
         aria-label="Decrement value"
         onClick={() => dispatch(decrement())}
       >
         -
       </button>
+      <br />
+      <br />
       <button aria-label="Reset value" onClick={() => dispatch(reset())}>
         Reset
       </button>
-
+<br />
+<br />
       <input
         type="number"
         value={amount}
         onChange={(e) => setAmount(e.target.value)}
       />
+      <br />
       <button
         aria-label="Increment by amount"
         onClick={() => dispatch(incrementByAmount(Number(amount)))}
