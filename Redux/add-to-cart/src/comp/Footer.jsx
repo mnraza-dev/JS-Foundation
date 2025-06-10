@@ -5,10 +5,10 @@ export default function Footer() {
   return (
     <footer className="bg-white border-gray-200 dark:bg-gray-900 p-4  w-full shadow-sm ">
       <div className="w-full mx-auto max-w-screen-xl p-2 md:flex md:items-center md:justify-between">
-        <span className="text-sm text-gray-500 sm:text-center dark:text-white">
+        <span className="text-sm font-semibold text-gray-500 sm:text-center dark:text-white">
           © 2025{" "}
           <Link to="/" className="hover:underline">
-            Add To Cart
+            <span className="font-light">ShoppyCart</span>
           </Link>
           . All Rights Reserved.
         </span>
