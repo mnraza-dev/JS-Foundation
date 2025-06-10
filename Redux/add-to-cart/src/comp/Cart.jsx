@@ -22,7 +22,10 @@ export default function Cart() {
     },
   ];
 
-  const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const totalPrice = cartItems.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
 
   return (
     <section className="min-h-screen bg-gray-100 dark:bg-gray-900 px-4 py-12">
@@ -35,7 +38,10 @@ export default function Cart() {
           <div className="text-center text-gray-500 dark:text-gray-400">
             Your cart is empty 🛒
             <br />
-            <Link to="/shop" className="text-green-600 underline dark:text-green-400">
+            <Link
+              to="/shop"
+              className="text-green-600 underline dark:text-green-400"
+            >
               Continue Shopping
             </Link>
           </div>
@@ -49,15 +55,20 @@ export default function Cart() {
                   className="flex items-center justify-between p-4 bg-white rounded-lg shadow-sm dark:bg-gray-800"
                 >
                   <div className="flex items-center gap-4">
-                    <img src={item.image} alt={item.name} className="w-20 h-20 object-cover rounded" />
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-20 h-20 object-cover rounded"
+                    />
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-800 dark:text-white">{item.name}</h3>
+                      <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
+                        {item.name}
+                      </h3>
                       <p className="text-sm text-gray-600 dark:text-gray-400">
-                      Price:  ₹{item.price.toLocaleString()} 
-                 
+                        Price: ₹{item.price.toLocaleString()}
                       </p>
                       <p className="text-sm text-gray-600 dark:text-gray-400">
-                     Qty: {item.quantity} 
+                        Qty: {item.quantity}
                       </p>
                     </div>
                   </div>
@@ -70,10 +81,14 @@ export default function Cart() {
 
             {/* Summary */}
             <div className="p-6 bg-white rounded-lg shadow-md dark:bg-gray-800">
-              <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-white">Summary</h3>
+              <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-white">
+                Summary
+              </h3>
               <div className="flex justify-between mb-2 text-gray-700 dark:text-gray-300">
                 <span>Total Items:</span>
-                <span>{cartItems.reduce((acc, item) => acc + item.quantity, 0)}</span>
+                <span>
+                  {cartItems.reduce((acc, item) => acc + item.quantity, 0)}
+                </span>
               </div>
               <div className="flex justify-between mb-4 text-gray-700 dark:text-gray-300">
                 <span>Total Price:</span>
