@@ -14,6 +14,12 @@ export default function App() {
     if (name === "hours") {
       setHours(value);
     }
+    if (name === "minutes") {
+      setMinutes(value);
+    }
+    if (name === "seconds") {
+      setSeconds(value);
+    }
   };
 
   return (
