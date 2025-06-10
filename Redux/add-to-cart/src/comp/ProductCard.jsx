@@ -1,33 +1,29 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function ProductCard({ product }) {
   return (
-    <div 
-    className="relative w-full max-w-[240px] bg-green-50 border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 hover:scale-105 transition-all duration-300">
-      <a href="#">
+    <div className="relative w-full max-w-[240px] bg-green-50 border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 hover:scale-105 transition-all duration-300">
+      <Link to={`/product/${product.id}`}>
         <img
           className="  rounded-t-lg w-full h-48 bg-cover"
           src={product.image}
           alt="product image"
         />
-      </a>
-      <div className="px-5  py-2 pb-5">
-        <a href="#">
-          <h5 className="text-sm font-semibold tracking-tight text-gray-900 dark:text-white">
+      </Link>
+      <div className="px-5 py-2 pb-5 flex flex-col  justify-between">
+        <div className="">
+          <p className="text-sm font-semibold tracking-tight text-gray-900 dark:text-white">
             {product.title}
-          </h5>
-        </a>
-        <a href="#">
-          <h5 className="text-sm font-semibold my-1 tracking-tight text-gray-900 dark:text-amber-400">
+          </p>
+          <p className="text-sm font-semibold my-1 tracking-tight text-gray-900 dark:text-amber-400">
             {product.category.toUpperCase()}
-          </h5>
-        </a>
-
-        <div className="flex items-center justify-between">
-          <span className="text-lg font-semibold text-gray-900 dark:text-amber-400">
+          </p>
+          <p className="text-lg font-semibold text-gray-900 dark:text-amber-400">
             ${product.price}
-          </span>
+          </p>
         </div>
+
         <div className="  mt-2 flex justify-center gap-2">
           <button className="cursor-pointer bg-green-800 hover:bg-green-900 px-2 py-1 text-xs text-gray-200 w-fit rounded-md">
             Add to cart
