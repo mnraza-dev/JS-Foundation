@@ -38,12 +38,18 @@ export default function App() {
       </button>
 
       <div className="pt-4">
-        <div className="flex flex-row gap-4">
-          <p>Hours</p>
-          <span>:</span>
-          <p>Minutes</p>
-          <span>:</span>
-          <p>Seconds</p>
+        <div className="flex gap-4">
+          <div className="flex gap-4 items-center">
+            <p className="text-8xl">10</p>
+            <span className="text-7xl">:</span>
+          </div>
+          <div className="flex gap-4 items-center">
+            <p className="text-8xl">11</p>
+            <span className="text-7xl">:</span>
+          </div>
+          <div className="flex items-center">
+            <p className="text-8xl">12</p>
+          </div>
         </div>
         <div className="flex justify-center pt-4 flex-row gap-4">
           <button className="bg-fuchsia-800 text-white px-4 py-2 rounded-md">
