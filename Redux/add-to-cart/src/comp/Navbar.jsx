@@ -84,7 +84,7 @@ export default function Navbar() {
               </span>
             </Link>
             <button className="bg-green-500 text-white px-4 py-2 rounded-md">
-              <Link to="/cart">Get Started</Link>
+              <Link to="/">Get Started</Link>
             </button>
           </div>
         </div>
