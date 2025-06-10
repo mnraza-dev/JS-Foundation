@@ -3,27 +3,14 @@ import { Link } from "react-router-dom";
 import { Trash2 } from "lucide-react";
 import { ListOrdered } from "lucide-react";
 import { ShoppingCartIcon } from "lucide-react";
+import { useSelector } from "react-redux";
 
 export default function Cart() {
-  const cartItems = [
-    {
-      id: 1,
-      name: "Wireless Headphones",
-      price: 1999,
-      quantity: 1,
-      image: "https://via.placeholder.com/80",
-    },
-    {
-      id: 2,
-      name: "Smart Watch",
-      price: 2999,
-      quantity: 2,
-      image: "https://via.placeholder.com/80",
-    },
-  ];
 
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  
   const totalPrice = cartItems.reduce(
-    (acc, item) => acc + item.price * item.quantity,
+    (acc, item) => acc + item.price,
     0
   );
 
@@ -47,7 +34,7 @@ export default function Cart() {
           </div>
         ) : (
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Cart Items */}
+        
             <div className="md:col-span-2 space-y-6">
               {cartItems.map((item) => (
                 <div
@@ -62,13 +49,13 @@ export default function Cart() {
                     />
                     <div>
                       <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
-                        {item.name}
+                        {item.title}
                       </h3>
                       <p className="text-sm text-gray-600 dark:text-gray-400">
                         Price: ₹{item.price.toLocaleString()}
                       </p>
                       <p className="text-sm text-gray-600 dark:text-gray-400">
-                        Qty: {item.quantity}
+                        Qty: 0
                       </p>
                     </div>
                   </div>

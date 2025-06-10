@@ -1,8 +1,10 @@
 import { ShoppingCart } from "lucide-react";
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
+  const cartItems = useSelector((state) => state.cart.cartItems);
   return (
     <header className="sticky top-0 z-50 bg-white border-gray-200 dark:bg-gray-900 backdrop-blur-md supports-[backdrop-filter]:bg-white/50">
       <nav className=" ">
@@ -79,9 +81,13 @@ export default function Navbar() {
           <div className="flex items-center gap-6">
             <Link to="/cart" className="relative">
               <ShoppingCart className="w-6 h-6 text-gray-700 dark:text-white" />
-              <span className="absolute -top-2 -right-2 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-bold leading-none text-white bg-red-600 rounded-full">
-                3
-              </span>
+              {
+                cartItems.length > 0 && (
+                  <span className="absolute -top-2 -right-2 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-bold leading-none text-white bg-red-600 rounded-full">
+                    {cartItems.length}
+                  </span>
+                )
+              }
             </Link>
             <button className="bg-green-500 text-white px-4 py-2 rounded-md">
               <Link to="/">Get Started</Link>
