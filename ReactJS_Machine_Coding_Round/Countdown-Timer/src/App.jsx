@@ -9,25 +9,37 @@ export default function App() {
   const handleStart = () => {
     setIsStarted(true);
   };
+  const handleInput = (e) => {
+    const { name, value } = e.target;
+    if (name === "hours") {
+      setHours(value);
+    }
+  };
 
   return (
     <div className="h-screen bg-amber-300 flex flex-col items-center justify-center">
       <h1 className="text-4xl mb-4 font-bold">Countdown Timer</h1>
       <div className="flex flex-row gap-4">
         <input
+          onChange={(e) => handleInput(e)}
           className="w-10 h-10 text-center bg-white"
           type="text"
           placeholder="HH"
+          name="hours"
         />
         <input
+          onChange={(e) => handleInput(e)}
           className="w-10 h-10 text-center bg-white"
           type="text"
           placeholder="MM"
+          name="minutes"
         />
         <input
+          onChange={(e) => handleInput(e)}
           className="w-10 h-10 text-center bg-white"
           type="text"
           placeholder="SS"
+          name="seconds"
         />
       </div>
       <button
