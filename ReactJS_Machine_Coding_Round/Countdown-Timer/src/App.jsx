@@ -2,9 +2,9 @@ import React, { useState } from "react";
 
 export default function App() {
   const [isStarted, setIsStarted] = useState(false);
-  // const [hours, setHours] = useState(0);
-  // const [minutes, setMinutes] = useState(0);
-  // const [seconds, setSeconds] = useState(0);
+  const [hours, setHours] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(0);
 
   const handleStart = () => {
     setIsStarted(true);
@@ -36,7 +36,6 @@ export default function App() {
       >
         Start
       </button>
-
       <div className="pt-4">
         <div className="flex gap-4">
           <div className="flex gap-4 items-center">
