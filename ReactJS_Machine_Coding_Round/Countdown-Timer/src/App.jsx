@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 export default function App() {
   const [isStarted, setIsStarted] = useState(false);
   const [hours, setHours] = useState(0);
