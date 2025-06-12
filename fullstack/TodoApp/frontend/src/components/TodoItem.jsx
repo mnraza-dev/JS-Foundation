@@ -11,7 +11,7 @@ import { Button } from "./ui/button";
 import { Trash2 } from "lucide-react";
 import { PencilIcon } from "lucide-react";
 
-export default function TodoItem({ todo, deleteTodo }) {
+export default function TodoItem({ todo, deleteTodo, handleEdit }) {
   return (
     <Card
       className={
@@ -28,7 +28,7 @@ export default function TodoItem({ todo, deleteTodo }) {
       </CardContent>
       <CardFooter className={"justify-end gap-2"}>
         <Button
-          onClick={() => handleEdit(todo._id)}
+          onClick={() => handleEdit(todo)}
           className="rounded-full"
           size={"icon"}
           variant={""}
