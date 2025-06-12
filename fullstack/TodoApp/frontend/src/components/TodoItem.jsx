@@ -11,13 +11,7 @@ import { Button } from "./ui/button";
 import { Trash2 } from "lucide-react";
 import { PencilIcon } from "lucide-react";
 
-export default function TodoItem({ todo }) {
-  const handleEdit = (id) => {
-    console.log(id);
-  };
-  const handleDelete = (id) => {
-    console.log(id);
-  };
+export default function TodoItem({ todo, deleteTodo }) {
   return (
     <Card className={"bg-amber-300 shadow-sm"}>
       <CardHeader>
@@ -38,8 +32,8 @@ export default function TodoItem({ todo }) {
           <PencilIcon className="w-4 h-4" />
         </Button>
         <Button
-          onClick={() => handleDelete(todo._id)}
-          className="rounded-full"
+          onClick={() => deleteTodo(todo._id)}
+          className="rounded-full cursor-pointer"
           size={"icon"}
           variant={"destructive"}
         >
