@@ -28,12 +28,45 @@ export const getTodos = async (req, res) => {
 
 export const deleteTodo = async (req, res) => {
   try {
-    const id = req.params._id;
+    const id = req.params.id;
 
-    await Todo.findOneAndDelete(id);
+    const deletedTodo = await Todo.findByIdAndDelete(id);
+
+    if (!deletedTodo) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Todo not found." });
+    }
     res.status(200).json({
       success: true,
-      mesaage: "successful deleted a todo item.",
+      message: "Successfully deleted the todo item.",
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+export const updateTodo = async (req, res) => {
+  try {
+    const { title, description } = req.body;
+    const id = req.params.id;
+    const updatedTodo = await Todo.findByIdAndUpdate(
+      id,
+      {
+        title: title,
+        description: description,
+      },
+      {
+        new: true,
+      }
+    );
+    return res.status(201).json({
+      success: true,
+      message: "Updated the todo item",
+      data: { title, description },
     });
   } catch (error) {
     res.status(403).json({
