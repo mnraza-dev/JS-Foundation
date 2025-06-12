@@ -13,7 +13,11 @@ import { PencilIcon } from "lucide-react";
 
 export default function TodoItem({ todo, deleteTodo }) {
   return (
-    <Card className={"bg-amber-300 shadow-sm"}>
+    <Card
+      className={
+        "backdrop-blur-sm w-full max-w-xs shadow-2xl bg-gradient-to-br from-amber-200 to-blue-300 hover:shadow-2xl hover:scale-105 hover:transition-all hover:duration-300 "
+      }
+    >
       <CardHeader>
         <CardTitle className={"text-fuchsia-950"}>{todo.title}</CardTitle>
       </CardHeader>

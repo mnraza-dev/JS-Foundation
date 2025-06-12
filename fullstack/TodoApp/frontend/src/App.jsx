@@ -32,11 +32,11 @@ export default function App() {
     getAllTodos();
   }, []);
   return (
-    <div className="p-8 ">
+    <div className="p-8 bg-gradient-to-r from-indigo-200 to-fuchsia-300">
       <div className="flex justify-center">
         <AddTodo handleAddTodo={handleAddTodo} />
       </div>
-      <div className="flex mt-4 flex-wrap gap-4 ">
+      <div className="flex justify-center mt-4 flex-wrap gap-4 ">
         {todos.map((todo) => (
           <TodoItem key={todo._id} todo={todo} deleteTodo={deleteTodo} />
         ))}

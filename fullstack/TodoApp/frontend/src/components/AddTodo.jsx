@@ -20,10 +20,12 @@ export default function AddTodo({ handleAddTodo }) {
     description: "",
   });
   return (
-    <Card className="w-full max-w-sm bg-blue-200-100 shadow-sm">
+    <Card className="w-full shadow-2xl  max-w-sm bg-gradient-to-tl text-white from-green-400 to-blue-900 backdrop-blur-sm">
       <CardHeader>
-        <CardTitle>Add Todo</CardTitle>
-        <CardDescription>
+        <CardTitle className={" text-white font-bold text-2xl"}>
+          Add Todo
+        </CardTitle>
+        <CardDescription className={" text-white font-thin italic"}>
           Enter your daily tasks below to add to your list
         </CardDescription>
       </CardHeader>
@@ -33,6 +35,11 @@ export default function AddTodo({ handleAddTodo }) {
             <div className="grid gap-2">
               <Label htmlFor="title">Title</Label>
               <Input
+                className={` bg-white text-black ${
+                  todoData.title === ""
+                    ? "border-red-500"
+                    : "border-green-500 focus:border-green-500"
+                }`}
                 value={todoData.title}
                 onChange={(e) =>
                   setTodoData({ ...todoData, title: e.target.value })
@@ -45,6 +52,11 @@ export default function AddTodo({ handleAddTodo }) {
             <div className="grid gap-2">
               <Label htmlFor="description">Description</Label>
               <Textarea
+                className={` bg-white text-black ${
+                  todoData.description === ""
+                    ? "border-red-500"
+                    : "border-green-500 focus:border-green-500"
+                }`}
                 value={todoData.description}
                 onChange={(e) =>
                   setTodoData({ ...todoData, description: e.target.value })
@@ -60,8 +72,14 @@ export default function AddTodo({ handleAddTodo }) {
       </CardContent>
       <CardFooter className="flex-col gap-2">
         <Button
+          variant="outline"
+          disabled={todoData.title === "" || todoData.description === ""}
           type="submit"
-          className="w-full text-white cursor-pointer"
+          className={` w-full text-fuchsia-900  ${
+            todoData.title === "" || todoData.description === ""
+              ? "bg-gray-100 cursor-no-drop hover:bg-gray-200"
+              : "bg-amber-500 hover:bg-amber-600 cursor-pointer"
+          }`}
           onClick={() => handleAddTodo(todoData)}
         >
           Add Todo
