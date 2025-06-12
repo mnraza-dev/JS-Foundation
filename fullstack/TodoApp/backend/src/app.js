@@ -11,7 +11,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-app.use("api/v1/todo/", todoRouter);
+
+app.get("",(req, res)=>{
+  res.json({
+    message:"Test"
+  })
+})
+app.use("/api/v1/todo", todoRouter);
+
 app.listen(port, () => {
   connectDB();
   console.log(`Server is running at http://localhost:${port}`);
