@@ -11,14 +11,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "./ui/textarea";
 import { useState } from "react";
-import axios from "axios";
-import { useEffect } from "react";
 
 export default function AddTodo({ handleAddTodo }) {
   const [todoData, setTodoData] = useState({
     title: "",
     description: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
   return (
     <Card className="w-full shadow-2xl  max-w-sm bg-gradient-to-tl text-white from-green-400 to-blue-900 backdrop-blur-sm">
       <CardHeader>
@@ -80,9 +79,13 @@ export default function AddTodo({ handleAddTodo }) {
               ? "bg-gray-100 cursor-no-drop hover:bg-gray-200"
               : "bg-amber-500 hover:bg-amber-600 cursor-pointer"
           }`}
-          onClick={() => handleAddTodo(todoData)}
+          onClick={() => {
+            setIsLoading(true);
+            handleAddTodo(todoData);
+            setIsLoading(false);
+          }}
         >
-          Add Todo
+          {isLoading ? "Adding..." : "Add Todo"}
         </Button>
       </CardFooter>
     </Card>
