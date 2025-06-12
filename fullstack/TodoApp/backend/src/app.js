@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import todoRouter from "./routes/todo.js";
 
-import cors from cors
+import cors from "cors"
 dotenv.config();
 const port = process.env.PORT || 3000;
 const app = express();
