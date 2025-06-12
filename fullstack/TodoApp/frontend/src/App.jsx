@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import { Button } from "./components/ui/button";
+import TodoItem from "./components/TodoItem";
 
 export default function App() {
   return (
-    <div className=''>
-      <h1 className='text-3xl font-bold underline'>Hello World</h1>
+    <div className="p-8 ">
+      <div className="flex flex-wrap ">
+        <TodoItem />
+      </div>
     </div>
-  )
+  );
 }
