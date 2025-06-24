@@ -1,5 +1,11 @@
+// There are three ways to declare a variable in JavaScript: var, let, and const.
+// 1. var - function scoped or globally scoped
+// 2. let - block scoped
+// 3. const - block scoped, cannot be reassigned
+
 var name = "mnraza";
 let my_name = "MN Raza";
+const firstName = "MN";
 
 function show(){
     if(1){
