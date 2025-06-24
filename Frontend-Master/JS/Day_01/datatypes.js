@@ -81,7 +81,14 @@ console.log(Object.keys(obj)); //symbol key can't be seen , but it exists
 
 // Object
 // Objects works on reference basis 
-// 
+const obj1 = {
+  "name": "mnraza",
+  "age": 30,
+};
+
+const obj2 = obj1;
+obj2.age = 31;
+console.log(obj1);
 
 const person = {
   "name": "mnraza",
