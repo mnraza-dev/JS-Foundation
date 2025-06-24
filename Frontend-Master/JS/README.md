@@ -31,7 +31,36 @@ Non-Primitive Types - Object
 Dynamic Types - JS
 Static Types - C/java
 
+```javascript
+ let age = [];
+console.log(typeof age);
+ 
+console.log(typeof null); //object - it is legacy bug
+console.log(typeof undefined); //undefined
 
+```
+### Type Conversion 
+
+```javascript
+console.log("24" - 2); // string to number - 22
+console.log("24" + 2); // string concatenation - "242"
+console.log("24" * 2); // string to number - 48
+console.log("24" / 2); // string to number - 12
+
+```
+There are 6 falsy values in JavaScript:
+ 1. false
+ 2. 0
+ 3. "", '', `` (empty string)
+ 4. null
+ 5. undefined
+ 6. NaN (Not a Number)
+
+Truthy values in JavaScript are all values that are not falsy.
+This includes:
+1. true
+2. Any non-zero number (e.g., 1, -1, 3.14)
+3. Any non-empty string (e.g., "hello", '0', `world`)
 
 typeof()
 NaN and -0
