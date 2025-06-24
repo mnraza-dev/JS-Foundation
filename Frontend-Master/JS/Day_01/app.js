@@ -17,7 +17,7 @@ console.log(my_name);
 
 // Note: 
 // firstName;
-// If there is no keyword then it will be stored in window object.
+// If there is no 'var' keyword then it will be stored in window object.
 
 // var lastName = "Kumar";  
 // Global/Function/Local Scope
