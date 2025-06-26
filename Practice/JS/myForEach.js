@@ -3,3 +3,15 @@ Array.prototype.myForEach = function (callback) {
     callback(this[i], i, this);
   }
 };
+
+
+const fruits = ["🍎", "🍌", "🍇"];
+
+fruits.myForEach((fruit, index) => {
+  console.log(`Fruit ${index}: ${fruit}`);
+});
+
+// Output:
+// Fruit 0: 🍎
+// Fruit 1: 🍌
+// Fruit 2: 🍇
