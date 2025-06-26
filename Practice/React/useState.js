@@ -1,13 +1,10 @@
 let state;
-
 function useState(initialValue) {
   state = state === undefined ? initialValue : state;
-
   function setState(newValue) {
     state = newValue;
     console.log("State is now:", state);
   }
-
   return [state, setState];
 }
 
