@@ -5,5 +5,4 @@ function show() {
     console.log("Name is: " + myName);
     
 }
-
 show(); // Name is: mnraza
