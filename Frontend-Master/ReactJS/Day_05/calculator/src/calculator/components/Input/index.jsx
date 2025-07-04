@@ -1,5 +1,14 @@
-import React from "react";
 import "./style.css";
-export default function Input() {
-  return <input className="input" type="text" placeholder="0" />;
+export default function Input({placeholder = "", onInput = () => {}}) {
+  function handleInput (e) {
+    onInput(e.target.value);
+  };
+  return (
+    <input
+      onInput={handleInput}
+      placeholder={placeholder}
+      className="input"
+      type="text"
+    />
+  );
 }
