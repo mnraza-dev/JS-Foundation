@@ -24,6 +24,21 @@ function reducer(state = initialState, action) {
           ),
         ],
       };
+    case "INCREASE_CART_QUANTITY":
+      return {
+        ...state,
+        cartItems: [
+          ...state.cartItems.map((item) => {
+            if (item.productId === action.payload.productId) {
+              return {
+                ...item,
+                quantity: item.quantity + action.payload.quantity,
+              };
+            }
+            return item;
+          }),
+        ],
+      };
     default:
       return state;
   }
@@ -46,9 +61,22 @@ store.dispatch({
 });
 
 store.dispatch({
+  type: "ADD_TO_CART",
+  payload: {
+    productId: 11,
+    quantity: 4,
+  },
+});
+store.dispatch({
+  type: "INCREASE_CART_QUANTITY",
+  payload: {
+    productId: 1,
+    quantity: 2,
+  },
+});
+store.dispatch({
   type: "REMOVE_FROM_CART",
   payload: {
     productId: 1,
-    quantity: 1,
   },
 });
