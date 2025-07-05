@@ -35,5 +35,5 @@ store.subscribe(() => {
 // store.dispatch({ type: "increment" });
 // store.dispatch({ type: "decrement" });
 store.dispatch({ type: "incrementByAmount", payload: 121 });
-store.dispatch({ type: "decrementByAmount", payload: 10 });
-// store.dispatch({ type: "reset" });
+store.dispatch({ type: "decrementByAmount", payload: 11 });
+store.dispatch({ type: "reset" });
