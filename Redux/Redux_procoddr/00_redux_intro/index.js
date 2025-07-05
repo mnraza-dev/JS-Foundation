@@ -14,7 +14,14 @@ function reducer(state = initialState, action) {
 }
 
 const store = createStore(reducer);
-console.log(store)
-console.log(store.getState());
+
+store.subscribe(() => {
+  console.log("State changed:", store.getState());
+});
+
 store.dispatch({ type: "increment" });
-console.log(store.getState());
+
+store.dispatch({ type: "increment" });
+store.dispatch({ type: "increment" });
+
+
