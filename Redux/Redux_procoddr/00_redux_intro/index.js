@@ -10,6 +10,16 @@ function reducer(state = initialState, action) {
   if (action.type === "decrement") {
     return { count: state.count - 1 };
   }
+  if (action.type === "incrementByAmount") {
+    return {
+      count: state.count + action.payload,
+    };
+  }
+   if (action.type === "decrementByAmount") {
+    return {
+      count: state.count - action.payload,
+    };
+  }
   if (action.type === "reset") {
     return { count: (state.count = 0) };
   }
@@ -22,8 +32,8 @@ store.subscribe(() => {
   console.log("State changed:", store.getState());
 });
 
-store.dispatch({ type: "increment" });
-store.dispatch({ type: "increment" });
-store.dispatch({ type: "increment" });
-store.dispatch({ type: "decrement" });
-store.dispatch({ type: "reset" });
+// store.dispatch({ type: "increment" });
+// store.dispatch({ type: "decrement" });
+store.dispatch({ type: "incrementByAmount", payload: 121 });
+store.dispatch({ type: "decrementByAmount", payload: 10 });
+// store.dispatch({ type: "reset" });
