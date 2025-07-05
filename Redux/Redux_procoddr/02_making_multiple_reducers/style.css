@@ -1,0 +1,12 @@
+button {
+  padding: 12px 16px;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+#count {
+  color: #06560a;
+  font-weight: bold;
+  font-size: 44px;
+}

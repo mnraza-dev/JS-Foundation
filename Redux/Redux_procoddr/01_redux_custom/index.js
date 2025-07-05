@@ -42,10 +42,10 @@ const unsubscribe1= store.subscribe(() => {
   console.log("Another Subscribe:");
 });
 
-// unsubscribe example
 const unsubscribe = store.subscribe(() => {
   console.log("Unsubscribe example:");
 });
+
 unsubscribe();
 unsubscribe1();
 
