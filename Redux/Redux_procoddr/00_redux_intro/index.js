@@ -32,14 +32,39 @@ function reducer(state = initialState, action) {
       return state;
   }
 }
-const store = createStore(reducer);
+const store = createStore(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 store.subscribe(() => {
+  document.getElementById("count").innerText = store.getState().count;
+
   console.log("State changed:", store.getState());
 });
 
 // store.dispatch({ type: INCREMENT });
+// store.dispatch({ type: INCREMENT });
 // store.dispatch({ type: DECREMENT });
-store.dispatch({ type: INCREMENT_BY_AMOUNT, payload: 121 });
-store.dispatch({ type: DECREMENT_BY_AMOUNT, payload: 11 });
 // store.dispatch({ type: RESET });
+// store.dispatch({ type: INCREMENT_BY_AMOUNT, payload: 121 });
+// store.dispatch({ type: DECREMENT_BY_AMOUNT, payload: 11 });
+
+// DOM manipulation to display the count
+document.getElementById("increment").addEventListener("click", () => {
+  store.dispatch({ type: INCREMENT });
+});
+
+document.getElementById("decrement").addEventListener("click", () => {
+  store.dispatch({ type: DECREMENT });
+});
+
+document.getElementById("reset").addEventListener("click", () => {
+  store.dispatch({ type: RESET });
+});
+document.getElementById("incrementByAmount").addEventListener("click", () => {
+  store.dispatch({ type: INCREMENT_BY_AMOUNT, payload: 10 });
+});
+document.getElementById("decrementByAmount").addEventListener("click", () => {
+  store.dispatch({ type: DECREMENT_BY_AMOUNT, payload: 10 });
+});
