@@ -38,6 +38,16 @@ store.subscribe(() => {
   console.log("State changed:", store.getState());
 });
 
+const unsubscribe1= store.subscribe(() => {
+  console.log("Another Subscribe:");
+});
+
+// unsubscribe example
+const unsubscribe = store.subscribe(() => {
+  console.log("Unsubscribe example:");
+});
+unsubscribe();
+unsubscribe1();
 
 store.dispatch({ type: INCREMENT });
 store.dispatch({ type: INCREMENT });
