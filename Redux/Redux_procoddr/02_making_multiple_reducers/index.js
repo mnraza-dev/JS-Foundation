@@ -56,7 +56,6 @@ store.dispatch({
   type: "ADD_TO_CART",
   payload: {
     productId: 1,
-    quantity: 1,
   },
 });
 
@@ -64,7 +63,6 @@ store.dispatch({
   type: "ADD_TO_CART",
   payload: {
     productId: 11,
-    quantity: 4,
   },
 });
 store.dispatch({
