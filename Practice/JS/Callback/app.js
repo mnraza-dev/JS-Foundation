@@ -1,18 +1,28 @@
-function gettingMyNums(num, getMyNextNumber) {
-  setTimeout(() => {
-    console.log("My Magic Number:", num);
-    if(getMyNextNumber){
-        getMyNextNumber()
-    }
-  }, 1000);
-}
+// Count down from a number using callbacks
 
-gettingMyNums(1, ()=>{
-    gettingMyNums(11, ()=>{
-        gettingMyNums(111, ()=>{
-            gettingMyNums(1111,()=>{
-                gettingMyNums(11111)
-            })
-        })
-    })
-});
+// Output: 5... 4... 3... 2... 1... Blast Off!
+// countdown(5);
+
+function countdown(num, decreaseCount) {
+    setTimeout(() => {
+      console.log(num + "...");
+      if (decreaseCount) {
+        decreaseCount(num - 1);
+      }
+    }, 1000);
+  }
+  
+  countdown(5, (n1) => {
+    countdown(n1, (n2) => {
+      countdown(n2, (n3) => {
+        countdown(n3, (n4) => {
+          countdown(n4, () => {
+            setTimeout(() => {
+              console.log("Blast Off! 🚀");
+            }, 1000);
+          });
+        });
+      });
+    });
+  });
+  
