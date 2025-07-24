@@ -11,6 +11,48 @@
  *
  */
 
+// Number
+let price =789;
+console.log(price)
+console.log(typeof price)
+
+// Null 
+let first_name = null
+console.log(first_name)
+
+// Undefined
+let name;
+console.log(name)
+
+// Boolean
+let isRaining = true
+console.log(isRaining)
+console.log(typeof isRaining)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 console.log(typeof "Raza")
 console.log('first'+' last')
 console.log(7+8)
