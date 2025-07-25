@@ -27,4 +27,3 @@ console.log(sayHi());
 // const greet1 = () => {
 //   console.log("Hi there");
 // };
-
