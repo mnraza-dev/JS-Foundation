@@ -1,11 +1,9 @@
-import React from 'react'
 import { useReducer } from 'react'
-
 const CounterObj = () => {
     const initialState = {
-        count: 0
+        count: 0,
     }
-    const [count, dispatch] = useReducer(reducer, initialState);
+    const [counter, dispatch] = useReducer(reducer, initialState);
     function reducer(state, action) {
         switch (action.type) {
             case "INCR":
@@ -21,16 +19,14 @@ const CounterObj = () => {
     return (
         <div>
             <h2 style={{ textAlign: "center" }}>
-                Count: 0
+                Count: {counter.count}
             </h2>
             <div style={{ display: "flex", justifyContent: "center", gap: "10px" }}>
-                <button>Increemnt</button>
-                <button>Reset</button>
-                <button>Decrement</button>
+                <button onClick={() => { dispatch({type:"INCR"}) }}>Increemnt</button>
+                <button onClick={() => { dispatch({type:"RESET"}) }}>Reset</button>
+                <button onClick={() => { dispatch({type:"DECR"}) }}>Decrement</button>
             </div>
         </div>
     )
 }
-
-
 export default CounterObj;
