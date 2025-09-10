@@ -6,7 +6,7 @@ const Traditional = () => {
   const getPostsData = async () => {
     try {
       const res = await fetchPosts();
-      res.status === 200 ? setPosts(res.data) : []
+      return res.status === 200 ? setPosts(res.data) : []
       // console.log(res?.data);
     } catch (error) {
       console.log(" Error : ", error);
