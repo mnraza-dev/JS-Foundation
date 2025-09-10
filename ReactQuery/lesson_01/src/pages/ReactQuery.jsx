@@ -7,16 +7,16 @@ const ReactQuery = () => {
     queryFn: fetchPosts,
   })
   return (
-    <div>
+    <div className='bg-black'>
       <h1>With React Query</h1>
       <ul className=" p-4 my-2">
         {
           data?.map((item) => {
             const { body, title, id } = item;
-            return <li key={id}>
-              <span className="text-sm font-bold"> {id}</span>
-              <span className="text-gray-500 text-sm font-bold "> {title}</span>
-              <div className="text-sm text-blue-600">
+            return <li className='border-l-2 my-4 px-2  border-amber-400 space-y-1' key={id}>
+              <span className="text-sm text-white font-bold"> {id}</span>
+              <span className="text-gray-100 text-sm font-bold "> {title}</span>
+              <div className="text-sm text-gray-200">
                 {body}
               </div>
             </li>
