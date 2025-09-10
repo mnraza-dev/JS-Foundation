@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { fetchPosts } from '../api';
-
 const Traditional = () => {
   const [posts, setPosts] = useState(null);
   const getPostsData = async () => {
     try {
       const res = await fetchPosts();
       return res.status === 200 ? setPosts(res.data) : []
-      // console.log(res?.data);
     } catch (error) {
       console.log(" Error : ", error);
       return []
@@ -16,10 +14,8 @@ const Traditional = () => {
   useEffect(() => {
     getPostsData()
   }, [])
-
   return (
     <div>
-
       <ul className=" p-4 my-2">
         {
           posts?.map((item) => {
@@ -37,5 +33,4 @@ const Traditional = () => {
     </div>
   )
 }
-
 export default Traditional

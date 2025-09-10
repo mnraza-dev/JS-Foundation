@@ -11,7 +11,6 @@ const ReactQuery = () => {
       return []
     }
   }
-
   const { data } = useQuery({
     queryKey: ['posts'],
     queryFn: getPostsData,
@@ -26,7 +25,7 @@ const ReactQuery = () => {
             return <li key={id}>
               <span className="text-sm font-bold"> {id}</span>
               <span className="text-gray-500 text-sm font-bold "> {title}</span>
-              <div className="text-sm text-red-600">
+              <div className="text-sm text-blue-600">
                 {body}
               </div>
             </li>
@@ -36,5 +35,4 @@ const ReactQuery = () => {
     </div>
   )
 }
-
 export default ReactQuery
